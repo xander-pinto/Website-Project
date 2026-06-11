@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Careers · Tommy's Tunes</title>
+  <meta name="description" content="Join Tommy's Tunes, Long Island's longtime DJ entertainment family. Now hiring DJs, MCs, live musicians, technicians, and performers across Long Island.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Careers · Tommy's Tunes">
+  <meta property="og:description" content="Run a room with us. Now hiring DJs, MCs, live musicians, technicians, and performers across Long Island.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/careers.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    /* Careers cards use specialty-card with icons, not images — restore padding and dark text */
+    .specialty-card { padding: var(--sp-6); }
+    .specialty-card h3 { color: var(--charcoal); font-size: var(--fs-md); margin-bottom: var(--sp-2); }
+    .specialty-card p  { color: var(--charcoal); font-size: var(--fs-sm); line-height: 1.6; margin: 0; }
+
+    /* 3-on-top, 2-centered-below layout for open roles */
+    .specialty-grid--3-2 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: var(--sp-5);
+    }
+    .specialty-grid--3-2 > :nth-child(-n+3) { grid-column: span 2; }
+    .specialty-grid--3-2 > :nth-child(4)    { grid-column: 2 / span 2; }
+    .specialty-grid--3-2 > :nth-child(5)    { grid-column: 4 / span 2; }
+    @media (max-width: 699px) {
+      .specialty-grid--3-2 { grid-template-columns: 1fr; }
+      /* The desktop placement uses :nth-child rules, which outrank `> *`.
+         Match their specificity here or the cards keep spanning columns and
+         the browser invents narrow implicit tracks. */
+      .specialty-grid--3-2 > :nth-child(-n+3),
+      .specialty-grid--3-2 > :nth-child(4),
+      .specialty-grid--3-2 > :nth-child(5) { grid-column: auto; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886",
+    "email": "info@tommystunes.com"
+  }
+  </script>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Careers</span>
+      <h1>Run a room <em>with us.</em></h1>
+      <p>Forty people, named on the roster. Real Long Island weddings, mitzvahs, Sweet 16s, Quinceañeras, and corporate nights every weekend. If you can read a room and want a real seat at one, read on.</p>
+    </div>
+  </section>
+
+  <!-- WHY WORK HERE -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Why work here</span>
+        <h2>What you get when you join.</h2>
+      </div>
+
+      <!-- EDIT: Why-work-here value props -->
+      <div class="specialty-grid">
+        <article class="specialty-card">
+          <div class="specialty-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/>
+            </svg>
+          </div>
+          <h3>Real gigs, every weekend</h3>
+          <p>No spec work, no tip-jar nights. We've been booking Long Island events since 1985. There's always a room to be run.</p>
+        </article>
+
+        <article class="specialty-card">
+          <div class="specialty-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 21c0-4 4-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <h3>Your name on the roster</h3>
+          <p>Most companies hide the talent behind a logo. We don't. Couples ask for you by name. Reviews credit you by name. That's the whole pitch.</p>
+        </article>
+
+        <article class="specialty-card">
+          <div class="specialty-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+          </div>
+          <h3>Mentorship that's real</h3>
+          <p>Shadow a senior MC on a wedding. Co-DJ a Sweet 16 before you headline one. Forty years of room reps, passed down on the job.</p>
+        </article>
+
+        <article class="specialty-card">
+          <div class="specialty-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M3 10h18M8 4v4M16 4v4"/>
+            </svg>
+          </div>
+          <h3>Variety, not a routine</h3>
+          <p>Weddings one weekend, a Quince the next, a Mitzvah after that, a corporate gala in December. Different rooms, different music, same crew.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN ROLES -->
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Open roles</span>
+        <h2>What we're <em>hiring for.</em></h2>
+        <p>Bilingual talent in any language is a strong plus. Long Island weddings span every culture.</p>
+      </div>
+
+      <!-- EDIT: Open roles — add or remove cards as positions change. -->
+      <div class="specialty-grid--3-2">
+        <article class="specialty-card">
+          <h3>DJ</h3>
+          <p>Read the room, mix the night, work in lockstep with the MC. Library breadth and timing matter more than scratch tricks.</p>
+        </article>
+
+        <article class="specialty-card">
+          <h3>MC</h3>
+          <p>Lead the night on the mic. Run the timeline, hype the floor, handle the family moments with the right energy.</p>
+        </article>
+
+        <article class="specialty-card">
+          <h3>Roadie / Tech</h3>
+          <p>Load-in, setup, breakdown. Audio rigging, lighting trees, cold sparkler safety. The crew that makes the show possible.</p>
+        </article>
+
+        <article class="specialty-card">
+          <h3>Live musician</h3>
+          <p>Saxophone, guitar, percussion, strings. We bring live instrumentation to cocktail hours and receptions. If you play well with a DJ and know how to work a room, we want to hear from you.</p>
+        </article>
+
+        <article class="specialty-card">
+          <h3>Other</h3>
+          <p>Dancers, event hosts, party motivators, and specialty performers. If you bring energy to a party and want to be part of the crew, tell us what you do. We'll figure out where you fit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Apply</span>
+        <h2>Tell us <em>about yourself.</em></h2>
+        <p>We review applications weekly. We'll reach out within seven days if there's a fit.</p>
+      </div>
+
+      <div class="contact-card" style="max-width: 720px; margin: 0 auto; padding: var(--sp-7);">
+        <!-- EDIT: Careers application form. Submits via Netlify Forms. -->
+        <form name="careers-application" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap: var(--sp-4);">
+          <input type="hidden" name="form-name" value="careers-application">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="field">
+            <label for="career-name">Your name</label>
+            <input type="text" id="career-name" name="name" required autocomplete="name">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="career-email">Email</label>
+              <input type="email" id="career-email" name="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="career-phone">Phone</label>
+              <input type="tel" id="career-phone" name="phone" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="career-role">Role you're interested in</label>
+              <!-- EDIT: Role options -->
+              <select id="career-role" name="role_interested" required>
+                <option value="">Choose one</option>
+                <option>DJ</option>
+                <option>MC</option>
+                <option>Roadie / Tech</option>
+                <option>Live musician</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="career-experience">Years of experience</label>
+              <input type="text" id="career-experience" name="experience" placeholder="e.g., 3 years, brand new, etc.">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="career-languages">Other languages (optional)</label>
+            <input type="text" id="career-languages" name="languages" placeholder="e.g., Spanish, Italian, Hebrew, Portuguese, Mandarin">
+          </div>
+
+          <div class="field">
+            <label for="career-link">Link (optional): Instagram, demo reel, website, anything</label>
+            <input type="url" id="career-link" name="portfolio_link" placeholder="https://">
+          </div>
+
+          <div class="field">
+            <label for="career-upload">Upload (optional): resume, video, reel, anything works</label>
+            <input type="file" id="career-upload" name="upload">
+          </div>
+
+          <div class="field">
+            <label for="career-message">Tell us about yourself</label>
+            <textarea id="career-message" name="message" required placeholder="Where you've worked, what kind of rooms you've run, why Tommy's Tunes."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send application</button>
+          <p class="form-fineprint">We review applications weekly. We'll reach out within seven days if there's a fit.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">Not the right time?</span>
+      <h2 class="display mt-6">Stay <em>on file.</em></h2>
+      <p>Email us anyway. We keep names on hand for the next round.</p>
+      <a class="btn btn-primary" href="mailto:info@tommystunes.com?subject=Careers%20%E2%80%94%20Keep%20me%20on%20file">Email info@tommystunes.com</a>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Service · Tommy's Tunes</title>
+  <meta name="description" content="A specific Tommy's Tunes service or upgrade. Long Island DJ entertainment since 1985.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Service · Tommy's Tunes">
+  <meta property="og:description" content="A specific service offered by Tommy's Tunes.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886"
+  }
+  </script>
+</head>
+<body data-detail-type="service">
+
+  <div data-component="nav"></div>
+
+  <div data-slot="detail-root">
+
+    <!-- DETAIL HERO -->
+    <section class="detail-hero">
+      <div class="starfield"></div>
+      <div class="detail-hero-photo" data-slot="hero-photo" aria-hidden="true"></div>
+      <div class="detail-hero-overlay" aria-hidden="true"></div>
+      <div class="container detail-hero-content">
+        <span class="kicker" data-slot="kicker">Services</span>
+        <h1 data-slot="name">&nbsp;</h1>
+        <p class="detail-hero-role" data-slot="role"></p>
+      </div>
+    </section>
+
+    <!-- ON THIS PAGE (built by detail-render.js from the visible sections) -->
+    <nav class="detail-toc" data-slot="toc" aria-label="On this page" hidden>
+      <div class="detail-toc-inner"></div>
+    </nav>
+
+    <!-- DESCRIPTION -->
+    <section class="section section-light" data-toc="Overview">
+      <div class="container detail-body">
+        <div class="lead" data-slot="bio"></div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED (hidden unless the service has an `included` list — e.g. photo booths) -->
+    <section class="section section-tinted" data-slot="included-section" data-toc="Included" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">What's included</span>
+          <h2>All of our booths come with <em>the following.</em></h2>
+        </div>
+        <ul class="package-specs detail-included" data-slot="included"></ul>
+      </div>
+    </section>
+
+    <!-- GALLERY (hidden if empty) -->
+    <section class="section section-tinted" data-slot="gallery-section" data-toc="Photos" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">From the floor</span>
+          <h2>Real nights, <em>real photos.</em></h2>
+        </div>
+        <div class="gallery-grid" data-slot="gallery"></div>
+      </div>
+    </section>
+
+    <!-- BACKDROPS (photo booths only — hidden if empty) -->
+    <section class="section section-light" data-slot="backdrops-section" data-toc="Backdrops" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Pick your backdrop</span>
+          <h2>29 designs <em>to choose from.</em></h2>
+          <p>From sequins and rustic barn doors to themed prints. Pick one and we set it up the day of the event.</p>
+        </div>
+        <div class="gallery-grid" data-slot="backdrops"></div>
+        <div class="backdrops-upgrade">
+          <h3>Want something more dramatic?</h3>
+          <p>Upgrade to a flowerwall backdrop. Three options, all 8 feet tall, photographs as well as it looks.</p>
+          <a class="btn btn-primary" href="/service/flower-walls/">See flowerwall options</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO (hidden if empty) -->
+    <section class="section section-light" data-slot="demo-section" data-toc="Video" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Demo</span>
+          <h2>See it <em>in the room.</em></h2>
+        </div>
+        <div class="detail-demo" data-slot="demo"></div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="starfield"></div>
+      <div class="container">
+        <span class="overline">One date at a time</span>
+        <h2 class="display mt-6">Want this <em>at your event?</em></h2>
+        <p>Tell us the date and we'll bundle it with the right package.</p>
+        <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+      </div>
+    </section>
+
+  </div>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/data/services-data.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/detail-render.js" defer></script>
+</body>
+</html>

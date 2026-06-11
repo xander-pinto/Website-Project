@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Reviews · Tommy's Tunes</title>
+  <meta name="description" content="250 verified five-star reviews from real Long Island couples and families. Sourced from The Knot, WeddingWire, Google, and Yelp.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Reviews · Tommy's Tunes">
+  <meta property="og:description" content="250 verified five-star reviews from real Long Island clients.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/reviews.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "250"
+    }
+  }
+  </script>
+
+  <style>
+    /* Reviews-specific layout */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-5);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+    }
+
+    .review-card {
+      background: var(--warm-white);
+      border: 1px solid rgba(11, 94, 222, 0.12);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      box-shadow: 0 2px 24px rgba(5, 13, 60, 0.04);
+    }
+
+    .review-stars {
+      color: var(--champagne);
+      letter-spacing: 0.12em;
+      font-size: var(--fs-md);
+    }
+
+    .review-quote {
+      font-family: var(--font-sans);
+      font-size: var(--fs-base);
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+    .review-meta {
+      font-size: var(--fs-sm);
+      color: var(--text-on-light-soft);
+      border-top: 1px solid rgba(11, 94, 222, 0.1);
+      padding-top: var(--sp-3);
+      margin-top: auto;
+    }
+
+    .review-byline strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .review-talent {
+      display: block;
+      margin-top: 2px;
+      font-size: var(--fs-xs);
+      letter-spacing: 0.02em;
+      color: var(--royal-blue);
+    }
+
+    .review-source {
+      display: inline-block;
+      margin-top: var(--sp-2);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--royal-blue);
+      text-decoration: none;
+    }
+    .review-source:hover { text-decoration: underline; }
+
+    /* Filter bar */
+    .reviews-filters {
+      max-width: 1100px;
+      margin: 0 auto var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+      align-items: center;
+    }
+    .filter-label {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-on-light-soft);
+      margin-right: var(--sp-2);
+    }
+    .filter-chip {
+      font-family: var(--font-sans);
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 94, 222, 0.25);
+      background: transparent;
+      color: var(--charcoal);
+      cursor: pointer;
+      transition: background var(--t-fast) var(--ease-out),
+                  border-color var(--t-fast) var(--ease-out),
+                  color var(--t-fast) var(--ease-out);
+    }
+    .filter-chip:hover {
+      border-color: var(--royal-blue);
+    }
+    .filter-chip.is-active {
+      background: var(--royal-blue);
+      border-color: var(--royal-blue);
+      color: var(--warm-white);
+    }
+
+    .reviews-counter {
+      max-width: 1100px;
+      margin: 0 auto var(--sp-4);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-on-light-soft);
+    }
+
+    .reviews-loadmore-wrap {
+      text-align: center;
+      margin-top: var(--sp-7);
+    }
+
+    .review-platforms {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-4);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    @media (min-width: 700px) {
+      .review-platforms { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .platform-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-5);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(49, 170, 239, 0.18);
+      border-radius: var(--r-md);
+      text-align: center;
+      text-decoration: none;
+      color: var(--warm-white);
+      transition: border-color var(--t-fast) var(--ease-out),
+                  transform var(--t-fast) var(--ease-out);
+    }
+    .platform-card:hover {
+      border-color: var(--electric-cyan);
+      transform: translateY(-2px);
+    }
+    .platform-card strong {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h4);
+      font-weight: 500;
+    }
+    .platform-card span {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--electric-cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Reviews</span>
+      <h1>Forty years of <em>five-star nights.</em></h1>
+      <p>Below are 250 of our most recent reviews, sourced from The Knot, WeddingWire, Google, and Yelp. We've collected well over a thousand more across every platform since 1985. Click any source link to verify any review on its original platform.</p>
+    </div>
+  </section>
+
+  <!-- AGGREGATE BANNER -->
+  <section class="section section-light" style="padding-top: var(--sp-7); padding-bottom: var(--sp-5);">
+    <div class="container">
+      <div class="text-center">
+        <div style="font-family: var(--font-serif); font-size: 64px; line-height: 1; color: var(--royal-blue); font-style: italic;">4.9★</div>
+        <p style="margin-top: var(--sp-3); font-size: var(--fs-md); color: var(--text-on-light-soft); max-width: 540px; margin-left: auto; margin-right: auto;">
+          Average rating across The Knot, WeddingWire, Google, and Yelp. The 250 reviews below go back to 2019, but we've been collecting them since 1985. Weddings, Sweet 16s, communions, and family parties.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS GRID (data-driven from window.REVIEWS_DATA via /js/reviews-render.js) -->
+  <section class="section section-light" style="padding-top: var(--sp-5);">
+    <div class="container">
+
+      <!-- Filter bar -->
+      <div class="reviews-filters">
+        <div class="filter-row">
+          <span class="filter-label">Event</span>
+          <button type="button" class="filter-chip is-active" data-filter-event="all">All</button>
+          <button type="button" class="filter-chip" data-filter-event="wedding">Weddings</button>
+          <button type="button" class="filter-chip" data-filter-event="sweet 16">Sweet 16</button>
+          <button type="button" class="filter-chip" data-filter-event="other">Other events</button>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">Source</span>
+          <button type="button" class="filter-chip is-active" data-filter-source="all">All</button>
+          <button type="button" class="filter-chip" data-filter-source="The Knot">The Knot</button>
+          <button type="button" class="filter-chip" data-filter-source="WeddingWire">WeddingWire</button>
+          <button type="button" class="filter-chip" data-filter-source="Google">Google</button>
+          <button type="button" class="filter-chip" data-filter-source="Yelp">Yelp</button>
+        </div>
+      </div>
+
+      <p class="reviews-counter" data-reviews-counter>Loading reviews&hellip;</p>
+
+      <!-- Cards rendered here by /js/reviews-render.js -->
+      <div class="reviews-grid" data-reviews-grid></div>
+
+      <div class="reviews-loadmore-wrap">
+        <button type="button" class="btn btn-primary" data-load-more hidden>Load more reviews</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- READ MORE ON PLATFORMS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Read every review</span>
+        <h2>The full library, <em>uncut.</em></h2>
+        <p>We don't curate or filter. Read every public review on the platforms below.</p>
+      </div>
+
+      <!-- EDIT: Add or update review platform links here. -->
+      <div class="review-platforms">
+        <a class="platform-card" href="https://www.theknot.com/marketplace/tommys-tunes-dj-entertainment-selden-ny-209421" target="_blank" rel="noopener">
+          <strong>The Knot</strong>
+          <span>Open profile →</span>
+        </a>
+        <a class="platform-card" href="https://m.weddingwire.com/biz/tommys-tunes-selden-syosset/507ba584bfd4f3f3" target="_blank" rel="noopener">
+          <strong>WeddingWire</strong>
+          <span>Open profile →</span>
+        </a>
+        <a class="platform-card" href="https://www.bridesofli.com/vendor/tommys-tunes/" target="_blank" rel="noopener">
+          <strong>Brides of Long Island</strong>
+          <span>Open profile →</span>
+        </a>
+        <!-- EDIT: Replace href with the real Google Business Profile URL once Tommy confirms it. -->
+        <a class="platform-card" href="https://www.google.com/search?q=Tommy%27s+Tunes+DJ+Entertainment+Selden+NY" target="_blank" rel="noopener">
+          <strong>Google</strong>
+          <span>Open profile →</span>
+        </a>
+        <!-- EDIT: Replace href with the real Yelp listing URL once Tommy confirms it. -->
+        <a class="platform-card" href="https://www.yelp.com/search?find_desc=Tommy%27s+Tunes+DJ&find_loc=Selden%2C+NY" target="_blank" rel="noopener">
+          <strong>Yelp</strong>
+          <span>Open profile →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">Your turn</span>
+      <h2 class="display mt-6">Be the next <em>five-star night.</em></h2>
+      <p>Tell us the date. We'll match the right DJ and MC to your event.</p>
+      <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/data/reviews-data.js" defer></script>
+  <script src="/js/reviews-render.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

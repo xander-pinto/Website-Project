@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Page not found · Tommy's Tunes</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .notfound {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--sp-9) var(--container-pad);
+      position: relative;
+      overflow: hidden;
+    }
+    .notfound-num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(7rem, 6rem + 8vw, 14rem);
+      line-height: 0.9;
+      color: var(--electric-cyan);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--sp-4);
+    }
+    .notfound h1 { margin-bottom: var(--sp-4); }
+  </style>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <section class="notfound">
+    <div class="starfield"></div>
+    <div style="position:relative; z-index:1; max-width: 600px;">
+      <div class="notfound-num">404</div>
+      <h1>This page <em>missed the cue.</em></h1>
+      <p style="margin-bottom: var(--sp-7);">Whatever you were looking for isn't here. Try the homepage, or check your date with us directly.</p>
+      <div style="display:flex; gap: var(--sp-3); justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="/index.html">Back to home</a>
+        <button type="button" class="btn btn-secondary" data-open-modal="true">Check your date</button>
+      </div>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

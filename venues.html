@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Venue affiliations · Tommy's Tunes</title>
+  <meta name="description"
+    content="Long Island venues we know by heart. Forty years of working the same rooms, with the same staff.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Venue affiliations · Tommy's Tunes">
+  <meta property="og:description" content="Long Island venues we know by heart.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/venues.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886"
+  }
+  </script>
+
+  <style>
+    .venue-region {
+      margin-bottom: var(--sp-9);
+    }
+
+    .venue-region:last-child {
+      margin-bottom: 0;
+    }
+
+    .venue-region-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: var(--sp-5);
+      padding-bottom: var(--sp-3);
+      border-bottom: 1px solid rgba(26, 26, 31, 0.12);
+    }
+
+    .venue-region h3 {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h3);
+      font-weight: 500;
+    }
+
+    .venue-region-count {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--royal-blue);
+    }
+
+    .venue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-2) var(--sp-5);
+    }
+
+    @media (min-width: 600px) {
+      .venue-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .venue-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .venue-name {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: var(--fs-base);
+      font-weight: 500;
+      color: var(--charcoal);
+      padding: var(--sp-3) 0;
+      border-bottom: 1px solid rgba(26, 26, 31, 0.06);
+      text-decoration: none;
+    }
+
+    a.venue-name {
+      transition: color var(--t-fast) var(--ease-out);
+    }
+
+    a.venue-name:hover {
+      color: var(--royal-blue);
+    }
+
+    .recommended-badge {
+      display: block;
+      width: fit-content;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--royal-blue);
+      background: rgba(11, 94, 222, 0.08);
+      border: 1px solid rgba(11, 94, 222, 0.2);
+      border-radius: 3px;
+      padding: 1px 5px;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Venues</span>
+      <h1>The rooms <em>we know by heart.</em></h1>
+      <p>Forty years of working the same Long Island rooms. We know the load-in doors, the maître d's, and where to set
+        up to make your dance floor look full from photo one.</p>
+    </div>
+  </section>
+
+  <!-- VENUES BY REGION -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="overline">Across Long Island</span>
+        <h2>From the North Shore <em>to the East End.</em></h2>
+        <p>If your venue isn't on this list, ask us. Odds are we've worked there. We just haven't gotten around to
+          listing every room.</p>
+      </div>
+
+      <!-- EDIT: Add or remove venues within each region below.
+           Group is by Long Island region and metro area. Move a venue to a different region by
+           cutting the .venue-name div and pasting into the right .venue-grid. -->
+
+      <div class="venue-region">
+        <div class="venue-region-head">
+          <h3>North Shore</h3>
+          <span class="venue-region-count">Nassau · Northern Suffolk</span>
+        </div>
+        <div class="venue-grid">
+          <a class="venue-name" href="https://www.lessings.com/corporate/weddings/venue/chateau-at-coindre-hall" target="_blank" rel="noopener">Coindre Hall</a>
+          <a class="venue-name" href="https://thecrescentbeachclub.com/" target="_blank" rel="noopener">Crescent Beach Club</a>
+          <a class="venue-name" href="https://www.cresthollow.com/" target="_blank" rel="noopener">Crest Hollow Country Club <span class="recommended-badge">Recommended Vendor</span></a>
+          <div class="venue-name">Fountainhead</div>
+          <a class="venue-name" href="https://www.thefoxhollow.com/" target="_blank" rel="noopener">Fox Hollow <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://elegantaffairscaterers.com/locations/george-weir-barn/" target="_blank" rel="noopener">George Weir Barn</a>
+          <a class="venue-name" href="https://www.themansionatglencove.com/" target="_blank" rel="noopener">Glen Cove Mansion</a>
+          <a class="venue-name" href="https://harborclubatprime.com/" target="_blank" rel="noopener">Harbor Club @ Prime</a>
+          <a class="venue-name" href="https://www.sandspointpreserveconservancy.org/about/hempstead-house/" target="_blank" rel="noopener">Hempstead House</a>
+          <a class="venue-name" href="https://www.huntingtoncc.org/" target="_blank" rel="noopener">Huntington Country Club</a>
+          <a class="venue-name" href="https://larkfield.com/" target="_blank" rel="noopener">Larkfield</a>
+          <a class="venue-name" href="https://majesticgardens.com/" target="_blank" rel="noopener">Majestic Gardens</a>
+          <a class="venue-name" href="https://www.lessings.com/corporate/weddings/venue/the-mansion-at-oyster-bay" target="_blank" rel="noopener">The Mansion at Oyster Bay</a>
+          <a class="venue-name" href="https://www.themetropolitancaterers.com/" target="_blank" rel="noopener">The Metropolitan - Glen Cove</a>
+          <a class="venue-name" href="https://milleridgeinn.com/" target="_blank" rel="noopener">Milleridge Inn</a>
+          <a class="venue-name" href="https://www.northhillscc.com/" target="_blank" rel="noopener">North Hills Country Club</a>
+          <a class="venue-name" href="https://www.oheka.com/" target="_blank" rel="noopener">Oheka Castle</a>
+          <a class="venue-name" href="https://www.refuge110.com/" target="_blank" rel="noopener">Refuge</a>
+          <a class="venue-name" href="https://theroyaltonproperties.com/the-royalton-mansion/" target="_blank" rel="noopener">The Royalton - Roslyn</a>
+          <a class="venue-name" href="https://theroyaltonproperties.com/the-royalton-on-the-greens/" target="_blank" rel="noopener">Royalton on The Greens</a>
+          <a class="venue-name" href="https://seacliffmanor.com/" target="_blank" rel="noopener">Sea Cliff Manor</a>
+          <a class="venue-name" href="https://www.seawanhaka.org/" target="_blank" rel="noopener">Seawanhaka Yacht Club</a>
+          <a class="venue-name" href="https://soundviewcaterers.com/" target="_blank" rel="noopener">Soundview Caterers</a>
+          <a class="venue-name" href="https://www.lessings.com/corporate/weddings/venue/pavilion-at-sunken-meadow" target="_blank" rel="noopener">Sunken Meadow Pavilion <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://www.vanderbiltmuseum.org/" target="_blank" rel="noopener">Vanderbilt Mansion</a>
+          <a class="venue-name" href="https://verdiswestbury.com/" target="_blank" rel="noopener">Verdi's of Westbury</a>
+          <a class="venue-name" href="https://www.watermillcaterers.com/" target="_blank" rel="noopener">Watermill <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://www.watersedgecenterport.com/" target="_blank" rel="noopener">Water's Edge</a>
+          <a class="venue-name" href="https://www.westburymanor.com/" target="_blank" rel="noopener">Westbury Manor</a>
+          <div class="venue-name">The Whitman Club at The Greens</div>
+        </div>
+      </div>
+
+      <div class="venue-region">
+        <div class="venue-region-head">
+          <h3>South Shore</h3>
+          <span class="venue-region-count">Nassau · Southern Suffolk</span>
+        </div>
+        <div class="venue-grid">
+          <a class="venue-name" href="https://www.allegriahotelny.com/" target="_blank" rel="noopener">Allegria</a>
+          <a class="venue-name" href="https://www.lessings.com/corporate/weddings/venue/the-barn-at-old-bethpage" target="_blank" rel="noopener">The Barn at Old Bethpage</a>
+          <a class="venue-name" href="https://www.bellportcountryclub.com/" target="_blank" rel="noopener">Bellport Country Club</a>
+          <a class="venue-name" href="https://www.bournemansion.com/" target="_blank" rel="noopener">Bourne Mansion</a>
+          <a class="venue-name" href="https://captainbills.com/" target="_blank" rel="noopener">Captain Bill's</a>
+          <a class="venue-name" href="https://www.coralhouse.com/" target="_blank" rel="noopener">Coral House</a>
+          <a class="venue-name" href="https://floralterrace.com/" target="_blank" rel="noopener">Floral Terrace</a>
+          <a class="venue-name" href="https://www.heritageclubatbethpage.com/" target="_blank" rel="noopener">Heritage Club at Bethpage</a>
+          <a class="venue-name" href="https://theinnatnhp.com/" target="_blank" rel="noopener">Inn at New Hyde Park</a>
+          <a class="venue-name" href="https://irishcoffeepub.com/" target="_blank" rel="noopener">Irish Coffee Pub <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://www.jerichoterrace.com/" target="_blank" rel="noopener">Jericho Terrace</a>
+          <a class="venue-name" href="https://landsendweddings.com/" target="_blank" rel="noopener">Land's End <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://thelannin.com/" target="_blank" rel="noopener">The Lannin</a>
+          <a class="venue-name" href="https://lombardisonthebay.com/" target="_blank" rel="noopener">Lombardi's On The Bay <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://www.memorarecaterers.org/" target="_blank" rel="noopener">Memorare Knight of Columbus</a>
+          <a class="venue-name" href="https://www.thepiermontny.com/" target="_blank" rel="noopener">The Piermont</a>
+          <a class="venue-name" href="https://www.rivierawaterfrontmansion.com/" target="_blank" rel="noopener">The Riviera</a>
+          <a class="venue-name" href="https://sandcastlevenue.com/" target="_blank" rel="noopener">Sand Castle</a>
+          <a class="venue-name" href="https://shandoncourt.com/" target="_blank" rel="noopener">Shandon Court</a>
+          <a class="venue-name" href="https://www.shcc1923.com/" target="_blank" rel="noopener">Southward Ho Country Club</a>
+          <a class="venue-name" href="https://sunset-harbour.com/" target="_blank" rel="noopener">Sunset Harbour</a>
+          <a class="venue-name" href="https://www.lessings.com/corporate/weddings/venue/mansion-at-timber-point" target="_blank" rel="noopener">Timber Point Country Club</a>
+          <a class="venue-name" href="https://villalombardis.com/" target="_blank" rel="noopener">Villa Lombardis <span class="recommended-badge">Recommended Vendor</span></a>
+          <div class="venue-name">West Hempstead Fire Department</div>
+        </div>
+      </div>
+
+      <div class="venue-region">
+        <div class="venue-region-head">
+          <h3>Central &amp; East Suffolk</h3>
+          <span class="venue-region-count">Smithtown · Riverhead</span>
+        </div>
+        <div class="venue-grid">
+          <a class="venue-name" href="https://brentwoodccgolf.com/" target="_blank" rel="noopener">Brentwood Country Club</a>
+          <a class="venue-name" href="https://www.danfords.com/" target="_blank" rel="noopener">Danford's <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://eastwindlongisland.com/" target="_blank" rel="noopener">East Wind</a>
+          <a class="venue-name" href="https://flowerfield.com/" target="_blank" rel="noopener">Flowerfield</a>
+          <a class="venue-name" href="https://hamletmtsinai.org/" target="_blank" rel="noopener">Hamlet Willow Creek (Mount Sinai)</a>
+          <a class="venue-name" href="https://www.invitedclubs.com/clubs/wind-watch-golf-country-club" target="_blank" rel="noopener">The Hamlet Windwatch</a>
+          <a class="venue-name" href="https://www.hilton.com/en/hotels/ispsbgi-hilton-garden-inn-stony-brook/" target="_blank" rel="noopener">Hilton Garden Inn (Stony Brook) <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://indigoeastend.com/" target="_blank" rel="noopener">Hotel Indigo</a>
+          <a class="venue-name" href="https://www.hyatt.com/hyatt-regency/en-US/haupp-hyatt-regency-long-island" target="_blank" rel="noopener">Hyatt Regency Hotel</a>
+          <div class="venue-name">Mill Pond Country Club</div>
+          <div class="venue-name">Moose Lodge - Mt. Sinai</div>
+          <a class="venue-name" href="https://oldfieldclub.com/" target="_blank" rel="noopener">Old Field Club</a>
+          <a class="venue-name" href="https://www.portjeffersoncountryclub.com/" target="_blank" rel="noopener">Port Jeff Country Club <span class="recommended-badge">Recommended Vendor</span></a>
+          <div class="venue-name">Portuguese Heritage Center</div>
+          <a class="venue-name" href="https://rockhillclub.com/" target="_blank" rel="noopener">Rock Hill Country Club</a>
+          <a class="venue-name" href="https://www.atlantisbanquetsandevents.com/eventspaces/sea-star-ballroom/" target="_blank" rel="noopener">Sea Star Ballroom</a>
+          <a class="venue-name" href="https://theexperiencenyli.com/" target="_blank" rel="noopener">Simplay New York</a>
+          <a class="venue-name" href="https://www.smithtownlandingcc.com/" target="_blank" rel="noopener">Smithtown Landing Country Club</a>
+          <a class="venue-name" href="https://www.stonebridgenewyork.com/" target="_blank" rel="noopener">Stonebridge Country Club</a>
+          <a class="venue-name" href="https://www.mirabelleatthreevillageinn.com/" target="_blank" rel="noopener">Three Village Inn</a>
+          <div class="venue-name">Upsky</div>
+          <a class="venue-name" href="https://windowsonthelake.com/" target="_blank" rel="noopener">Windows on The Lake</a>
+        </div>
+      </div>
+
+      <div class="venue-region">
+        <div class="venue-region-head">
+          <h3>The Hamptons &amp; North Fork</h3>
+          <span class="venue-region-count">East End</span>
+        </div>
+        <div class="venue-grid">
+          <a class="venue-name" href="https://www.brecknockhall.com/" target="_blank" rel="noopener">Brecknock Hall <span class="recommended-badge">Recommended Vendor</span></a>
+          <a class="venue-name" href="https://duckwalk.com/" target="_blank" rel="noopener">Duck Walk Vineyard</a>
+          <a class="venue-name" href="https://giorgiosli.com/" target="_blank" rel="noopener">Giorgio's</a>
+          <div class="venue-name">Jamesport Manor Inn</div>
+          <a class="venue-name" href="https://www.jedediahhawkinsinn.com/" target="_blank" rel="noopener">Jedediah Hawkins</a>
+          <a class="venue-name" href="https://macariwines.com/" target="_blank" rel="noopener">Macari Vineyard</a>
+          <a class="venue-name" href="https://www.culinartcateringcollection.com/peconicbayyachtclub/" target="_blank" rel="noopener">Peconic Bay Yacht Club</a>
+          <a class="venue-name" href="https://raphaelwine.com/" target="_blank" rel="noopener">Raphael Vineyard</a>
+          <a class="venue-name" href="https://www.rgnywine.com/" target="_blank" rel="noopener">RGNY</a>
+          <a class="venue-name" href="https://trumpetsatthegate.com/" target="_blank" rel="noopener">Trumpets on The Gate</a>
+          <a class="venue-name" href="https://www.vineyardsataquebogue.com/" target="_blank" rel="noopener">The Vineyard Caterers</a>
+        </div>
+      </div>
+
+      <div class="venue-region">
+        <div class="venue-region-head">
+          <h3>New York City &amp; Metro</h3>
+          <span class="venue-region-count">New York City · Westchester</span>
+        </div>
+        <div class="venue-grid">
+          <div class="venue-name">American Legion Hall - Brooklyn</div>
+          <a class="venue-name" href="https://www.bbg.org/visit/weddings" target="_blank" rel="noopener">Brooklyn Botanical Gardens</a>
+          <a class="venue-name" href="https://www.mlb.com/mets/ballpark/hospitality" target="_blank" rel="noopener">Citi Field</a>
+          <a class="venue-name" href="https://thecrestwoodmanor.com/" target="_blank" rel="noopener">Crestwood Manor</a>
+          <a class="venue-name" href="https://www.elcaribecaterers.com/" target="_blank" rel="noopener">El Caribe</a>
+          <div class="venue-name">Elks Lodge</div>
+          <a class="venue-name" href="https://www.marriott.com/en-us/hotels/nycex-jw-marriott-essex-house-new-york/overview/" target="_blank" rel="noopener">Essex House</a>
+          <a class="venue-name" href="https://gi-hc.com/" target="_blank" rel="noopener">Glenn Island Harbour Club</a>
+          <a class="venue-name" href="https://greentreeclub.com/" target="_blank" rel="noopener">Green Tree Country Club</a>
+          <a class="venue-name" href="https://www.mamaroneckbeachandyacht.com/" target="_blank" rel="noopener">Mamaroneck Beach and Yacht Club</a>
+          <a class="venue-name" href="https://www.mdrnyc.com/" target="_blank" rel="noopener">Marina Del Ray</a>
+          <a class="venue-name" href="https://www.russosonthebay.com/" target="_blank" rel="noopener">Russo's On The Bay</a>
+        </div>
+      </div>
+
+      <p class="text-center mt-7" style="font-size: var(--fs-sm); color: var(--text-on-light-soft);">
+        <em>Working with a venue not listed? We probably know it. Ask when you check your date.</em>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">Already booked your venue?</span>
+      <h2 class="display mt-6">Let's see who's free <em>for your night.</em></h2>
+      <p>Tell us the venue. We'll tell you which DJ knows the room.</p>
+      <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+
+</html>

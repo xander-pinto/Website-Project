@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Privacy policy · Tommy's Tunes</title>
+  <meta name="description" content="How Tommy's Tunes collects, uses, and protects your information.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .legal { max-width: 760px; margin: 0 auto; }
+    .legal h2 { font-size: var(--fs-h3); margin: var(--sp-7) 0 var(--sp-3); }
+    .legal h2:first-child { margin-top: 0; }
+    .legal p, .legal li { font-size: var(--fs-base); line-height: 1.75; margin-bottom: var(--sp-3); color: var(--text-on-light-soft); }
+    .legal ul { padding-left: 1.25rem; margin-bottom: var(--sp-4); }
+    .legal a { color: var(--royal-blue); text-decoration: underline; }
+    .legal-meta { font-size: var(--fs-sm); color: var(--text-on-light-soft); margin-bottom: var(--sp-7); }
+  </style>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Legal</span>
+      <h1>Privacy policy</h1>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="legal">
+
+        <p class="legal-meta">Last updated: <span id="legal-updated">2026</span></p>
+
+        <h2>What we collect</h2>
+        <p>When you fill out a form on this site (Check your date, contact, or the inline form on the contact page), we collect the information you submit: your name, email, phone number, event date, event type, venue, and any notes you include.</p>
+        <p>We do not run third-party marketing trackers or behavioral advertising. The site uses basic, privacy-respecting analytics to count page visits, no cookies that follow you around the web.</p>
+
+        <h2>How we use it</h2>
+        <p>We use the information you submit only to respond to your inquiry, send you a quote if you request one, and follow up about your event. That's it. We do not sell, rent, or share your contact information with anyone outside of Tommy's Tunes.</p>
+
+        <h2>How long we keep it</h2>
+        <p>If you book with us, we keep your event details as long as you're a client and for a reasonable period afterward for our records. If you inquire and don't book, we keep your inquiry on file for up to two years in case you reach back out, then we delete it.</p>
+
+        <h2>Your choices</h2>
+        <ul>
+          <li>You can ask us to delete your information at any time by emailing <a href="mailto:info@tommystunes.com">info@tommystunes.com</a>.</li>
+          <li>You can unsubscribe from any email by replying to it directly. We don't run a mailing list.</li>
+          <li>You can request a copy of any information we have on file.</li>
+        </ul>
+
+        <h2>Form submissions</h2>
+        <p>The forms on this site are processed through Netlify Forms, a service that captures form submissions and forwards them to our team. Netlify's privacy policy governs how that submission data is held in transit. You can read it at <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a>.</p>
+
+        <h2>Children</h2>
+        <p>This site is not directed at children under 13 and we do not knowingly collect information from anyone under 13. If a parent or guardian believes their child has submitted information, please contact us and we will delete it.</p>
+
+        <h2>Changes</h2>
+        <p>If we update this policy, we'll change the date at the top. Material changes will be reflected here before they take effect.</p>
+
+        <h2>Contact</h2>
+        <p>Questions? Email <a href="mailto:info@tommystunes.com">info@tommystunes.com</a> or call 631-732-5886.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script>
+    // Auto-update the "last updated" line based on file mtime won't work statically — set manually when policy changes.
+    document.getElementById('legal-updated').textContent = 'May 2026';
+  </script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

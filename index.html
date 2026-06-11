@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tommy's Tunes · Long Island DJ entertainment since 1985</title>
+  <meta name="description"
+    content="Long Island's longtime DJ entertainment family. Forty years of weddings, Sweet 16s, Quinceañeras, Mitzvahs, and corporate events. Named DJs, real reels, real reviews.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tommy's Tunes · Long Island DJ entertainment since 1985">
+  <meta property="og:description"
+    content="Forty years of weddings, Sweet 16s, Quinceañeras, Mitzvahs, and corporate events across Long Island.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "image": "https://tommystunes.com/assets/images/og-default.jpg",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886",
+    "email": "info@tommystunes.com",
+    "priceRange": "$$",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "691 Middle Country Road",
+        "addressLocality": "Selden",
+        "addressRegion": "NY",
+        "postalCode": "11784",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "68 South Service Road",
+        "addressLocality": "Melville",
+        "addressRegion": "NY",
+        "postalCode": "11747",
+        "addressCountry": "US"
+      }
+    ],
+    "founder": "Tommy Masino",
+    "foundingDate": "1985",
+    "areaServed": "Long Island, NY"
+  }
+  </script>
+</head>
+
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- ============================================================
+       ACT 1 — DARK CINEMATIC HERO
+       ============================================================ -->
+  <section class="hero">
+    <!-- EDIT: Hero video lives at /assets/videos/hero_video.mp4.
+         Muted + autoplay + loop = ambient background. Falls back to gradient if it fails to load. -->
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="/assets/videos/hero_video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
+    <div class="starfield"></div>
+
+    <div class="hero-content">
+      <!-- EDIT: Hero copy -->
+      <div class="kicker">Long Island · Since 1985</div>
+      <h1 class="display">Packed dance floors <em>since 1985.</em></h1>
+      <p class="lead">Forty years of weddings, Sweet 16s, Quinceañeras, Mitzvahs, and corporate events across Long
+        Island. Named DJs, real reels, real reviews.</p>
+
+      <div class="hero-ctas">
+        <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+        <a class="btn btn-secondary" href="/showcase.html">Watch the reel</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <!-- EDIT: Hero stats -->
+      <div class="hero-stat">
+        <div class="hero-stat-num">40+</div>
+        <div class="hero-stat-label">Years on Long Island</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">30+</div>
+        <div class="hero-stat-label">Named DJs &amp; MCs</div>
+      </div>
+      <div class="hero-stat">
+        <!-- EDIT: Booking horizon -->
+        <div class="hero-stat-num">2026–28</div>
+        <div class="hero-stat-label">Now booking</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ACT 2 — LIGHT CONTENT
+       ============================================================ -->
+
+  <!-- TEAM TEASER -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Meet the crew</span>
+        <h2>Most DJ companies hide behind a logo. <em>We don't.</em></h2>
+        <p>Joe Cip. on the mic. Dominick reading the room. Anderson and Ruben on Spanish-English weddings. Thirty people
+          on the roster, all named.</p>
+      </div>
+
+      <!-- 4 random featured talent injected by main.js -->
+      <div class="team-grid" data-rotation="team" data-count="4"></div>
+
+      <div class="text-center mt-7">
+        <a class="btn btn-secondary" href="/team.html">See the full roster</a>
+      </div>
+      <p class="hiring-line">We're hiring too. <a href="/careers.html">See open roles &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">What we do</span>
+        <h2>Every kind of night, <em>one team.</em></h2>
+      </div>
+
+      <!-- EDIT: Specialty cards. Each card links to its event page (keyword URLs, e.g. /wedding-dj-long-island/). -->
+      <div class="specialty-grid">
+        <a class="card-link specialty-card" href="/wedding-dj-long-island/">
+          <div class="card-photo" style="background-image: url('/assets/images/services/events/weddings/weddings_pf.jpg');">
+            <div class="card-photo-text">
+              <h3>Weddings</h3>
+              <p>Ceremony, cocktail hour, reception. One DJ and MC for your entire night.</p>
+            </div>
+          </div>
+        </a>
+        <a class="card-link specialty-card" href="/sweet-16-dj/">
+          <div class="card-photo" style="background-image: url('/assets/images/services/events/sweet-16-quinces/sweet_16_quinces_pf.jpg');">
+            <div class="card-photo-text">
+              <h3>Sweet 16s &amp; Quinceañeras</h3>
+              <p>Bilingual MCs. The entrance, the waltz, the crown. Every moment covered.</p>
+            </div>
+          </div>
+        </a>
+        <a class="card-link specialty-card" href="/bar-bat-mitzvah-dj/">
+          <div class="card-photo" style="background-image: url('/assets/images/services/events/mitzvahs/mitzvahs_pf.jpg');">
+            <div class="card-photo-text">
+              <h3>Mitzvahs</h3>
+              <p>The Hora, the candle lighting, the after-party. One team for the whole arc.</p>
+            </div>
+          </div>
+        </a>
+        <a class="card-link specialty-card" href="/corporate-event-dj/">
+          <div class="card-photo" style="background-image: url('/assets/images/services/events/corporate/corporate_pf.jpg');">
+            <div class="card-photo-text">
+              <h3>Corporate events</h3>
+              <p>Holiday parties, product launches, awards dinners, galas.</p>
+            </div>
+          </div>
+        </a>
+        <a class="card-link specialty-card specialty-card--center" href="/other-events/">
+          <div class="card-photo" style="background-image: url('/assets/images/services/events/other-events/other_events_pf.jpg');">
+            <div class="card-photo-text">
+              <h3>Other events</h3>
+              <p>Communions, graduations, birthdays, anniversaries, and everything in between.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES PREVIEW -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Packages</span>
+        <h2>Six tiers. <em>One we'll find for you.</em></h2>
+        <p>From a clean two-speaker setup to full production with dancers and live musicians. We'll match the package to
+          your venue, your guest count, and your budget.</p>
+      </div>
+
+      <!-- EDIT: Package preview rows. Prices stay off the public site — confirm with Tommy. Each row links to /package/<slug>/. -->
+      <div class="packages-preview">
+        <a class="pkg-row-link pkg-row" href="/package/basic/">
+          <span class="pkg-row-name">Basic</span>
+          <span class="pkg-row-tagline">For intimate weddings and gatherings of 75 or fewer.</span>
+        </a>
+        <a class="pkg-row-link pkg-row" href="/package/deluxe/">
+          <span class="pkg-row-name">Deluxe</span>
+          <span class="pkg-row-tagline">The Long Island standard. DJ on the music, MC working the room.</span>
+        </a>
+        <a class="pkg-row-link pkg-row" href="/package/super-deluxe/">
+          <span class="pkg-row-name">Super Deluxe</span>
+          <span class="pkg-row-tagline">Same team from ceremony through last dance, with the illuminated booth.</span>
+        </a>
+        <a class="pkg-row-link pkg-row" href="/package/premiere/">
+          <span class="pkg-row-name">Premiere</span>
+          <span class="pkg-row-tagline">Towers, intelligent lights, dedicated tech.</span>
+        </a>
+        <a class="pkg-row-link pkg-row" href="/package/supreme/">
+          <span class="pkg-row-name">Supreme</span>
+          <span class="pkg-row-tagline">Adds live event photography on screens through the night.</span>
+        </a>
+        <a class="pkg-row-link pkg-row" href="/package/grand/">
+          <span class="pkg-row-name">Grand</span>
+          <span class="pkg-row-tagline">Full production, plus a live sax or percussionist on the reception.</span>
+        </a>
+      </div>
+
+      <div class="text-center mt-7">
+        <a class="btn btn-primary" href="/packages.html">See what's included</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VENUE MARQUEE -->
+  <div class="marquee" aria-label="Venues we've worked">
+    <div class="marquee-label">A few of the venues we know by heart</div>
+    <div class="marquee-track" data-venue-marquee>
+      <!-- EDIT: Venue list is populated by main.js from VENUE_POOL. Count controlled by data-count. -->
+    </div>
+  </div>
+
+
+  <!-- UPCOMING SHOWCASES (conditional — hides entirely when no upcoming events in showcases-data.js) -->
+  <section class="section section-light" id="home-showcase-preview-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">See us in person</span>
+        <h2>Next stops <em>on the calendar.</em></h2>
+        <p>Bridal showcases at Long Island venues, every few weeks. Meet the team, see the lighting setups in person.</p>
+      </div>
+
+      <div class="showcase-preview-grid" data-showcase-calendar-preview></div>
+
+      <div class="text-center mt-6">
+        <a class="btn btn-secondary" href="/showcase.html#showcase-calendar-section">See all upcoming showcases</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FEATURED REVIEWS (static — 4 hand-picked from /js/data/reviews-data.js)
+       EDIT: To swap in different reviews, replace the four <article> cards below.
+       Source link in each card points to the platform where it was verified. -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">What clients say</span>
+        <h2>From the couples <em>themselves.</em></h2>
+      </div>
+
+      <div class="reviews-grid">
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">We used Tommy's Tunes for our Valentine's Day wedding! They were so easy to work with from start to finish. They kept the party going all night. We got so many compliments about our MC (Joe) and our DJ (Dom) and how excellent they were. We met with Mr. Masino to organize the whole event and he made the entire process enjoyable and fun! We used Tommy's tunes for my sweet 16 10 years ago and they are still just as good or even better! I could not recommend them more!</p>
+          <div class="review-meta">
+            <div class="review-byline">
+              <strong>Alexa</strong>
+              <span> · Wedding</span>
+              <span> · February 2026</span>
+            </div>
+            <div class="review-talent">with Joe + Dom + Mr. Masino</div>
+            <a href="https://m.weddingwire.com/biz/tommys-tunes-selden-syosset/507ba584bfd4f3f3" class="review-source" target="_blank" rel="noopener">Verified on WeddingWire &rarr;</a>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">Tommy Tunes was an incredible DJ company to work with for our wedding at Riviera Waterfront Mansion. We had DJ Dominick he kept the energy high and the dance floor full all night long. We received so many compliments about how fun our wedding was, and the music played a huge part of that. We had MC Joecip he was fantastic and kept our guests entertained the entire night. Not only is he talented and engaging, but he is also very easy to work with. We high recommend both the DJ Dominick and MC Joecip!!</p>
+          <div class="review-meta">
+            <div class="review-byline">
+              <strong>Amanda C.</strong>
+              <span> · Wedding</span>
+              <span> · December 2025</span>
+            </div>
+            <div class="review-talent">with Dominick + Joe Cip.</div>
+            <a href="https://www.theknot.com/marketplace/tommys-tunes-dj-entertainment-selden-ny-209421" class="review-source" target="_blank" rel="noopener">Verified on The Knot &rarr;</a>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">We had DJ John M. and MC Joe Cip. from Tommy Tunes for our wedding on 11/08/2025 at Land's End, and they were amazing! John kept the dance floor packed all night long — the energy never dipped for a second. Joe was so attentive, kind, and genuinely cared that we were having the best time. He made sure everything flowed perfectly and that we enjoyed every moment of our night. We felt terrible that we didn't get to properly thank him at the end of the night (everything was such a whirlwind!), but we truly can't say enough good things about both of them. They are the best — if you're booking Tommy Tunes, make sure you request Joe and John!</p>
+          <div class="review-meta">
+            <div class="review-byline">
+              <strong>Jennifer F.</strong>
+              <span> · Wedding</span>
+              <span> · November 2025</span>
+            </div>
+            <div class="review-talent">with John M. + Joe Cip.</div>
+            <a href="https://www.google.com/search?q=Tommy%27s+Tunes+DJ+Entertainment+Selden+NY" class="review-source" target="_blank" rel="noopener">Verified on Google &rarr;</a>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="review-quote">We had an incredible experience with Tommy's Tunes! Their professionalism, attention to detail, and high-quality equipment as well as their MC Dave was fabulous—energetic, fun, and amazing with our Sweet 16 crowd. You can truly feel the care and dedication of this family-run business. Everyone was just amazing and they made our daughter's Sweet 16 unforgettable!</p>
+          <div class="review-meta">
+            <div class="review-byline">
+              <strong>Patricia G.</strong>
+              <span> · Sweet 16</span>
+              <span> · January 2026</span>
+            </div>
+            <div class="review-talent">with David</div>
+            <a href="https://www.google.com/search?q=Tommy%27s+Tunes+DJ+Entertainment+Selden+NY" class="review-source" target="_blank" rel="noopener">Verified on Google &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-7">
+        <a class="btn btn-secondary" href="/reviews/">Read all reviews</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ACT 3 — DARK CLOSE
+       ============================================================ -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">One date at a time</span>
+      <h2 class="display mt-6">Let's throw a party <em>people will talk about.</em></h2>
+      <p>Tell us the date. We'll tell you what's possible.</p>
+      <div style="display:flex; gap: var(--sp-3); justify-content:center; flex-wrap:wrap;">
+        <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+        <a class="btn btn-secondary" href="tel:6317325886">631-732-5886</a>
+      </div>
+    </div>
+
+    <div class="container awards">
+      <!-- EDIT: Awards row — add or remove badges as needed -->
+      <div class="awards-row">
+        <span>★ The Knot Best of Weddings</span>
+        <span>★ EnGAYged Vendor</span>
+        <span>★ 4.9 average across review platforms</span>
+      </div>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/data/team-data.js"></script>
+  <script src="/js/data/testimonials-data.js"></script>
+  <script src="/js/data/showcases-data.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+
+</html>

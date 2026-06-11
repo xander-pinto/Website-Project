@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Showcase · Tommy's Tunes</title>
+  <meta name="description" content="Real reels, real photos, real Long Island events. See Tommy's Tunes at work.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Showcase · Tommy's Tunes">
+  <meta property="og:description" content="Real reels, real photos, real Long Island events.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/showcase.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886"
+  }
+  </script>
+
+  <style>
+    /* Showcase-specific: featured reel embed wrapper */
+    .reel-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(160deg, var(--deep-navy), var(--near-black));
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(49, 170, 239, 0.2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .reel-wrap iframe,
+    .reel-wrap video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .reel-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: var(--sp-3);
+      color: rgba(181, 212, 244, 0.65);
+      text-align: center;
+      padding: var(--sp-5);
+    }
+
+    /* Upcoming showcases calendar */
+    .showcase-calendar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-5);
+    }
+
+    @media (min-width: 700px) {
+      .showcase-calendar-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+
+    .showcase-event-card {
+      background: rgba(5, 13, 60, 0.5);
+      border: 1px solid rgba(49, 170, 239, 0.2);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .showcase-event-date {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--fs-xl);
+      color: var(--electric-cyan);
+      margin-bottom: var(--sp-2);
+      line-height: 1.2;
+    }
+
+    .showcase-event-venue {
+      font-size: var(--fs-md);
+      font-weight: 600;
+      color: var(--warm-white);
+      margin-bottom: var(--sp-1);
+    }
+
+    .showcase-event-type {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--electric-cyan);
+      opacity: 0.7;
+      margin-bottom: var(--sp-3);
+    }
+
+    .showcase-event-time {
+      font-size: var(--fs-sm);
+      color: var(--periwinkle);
+      margin-bottom: var(--sp-3);
+      letter-spacing: 0.02em;
+    }
+
+    .showcase-event-note {
+      font-size: var(--fs-sm);
+      color: var(--periwinkle);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .showcase-event-tickets {
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 8px 14px;
+      font-family: var(--font-sans);
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--electric-cyan);
+      text-decoration: none;
+      border: 1px solid rgba(49, 170, 239, 0.4);
+      border-radius: var(--r-pill);
+      transition: background var(--t-fast) var(--ease-out),
+                  border-color var(--t-fast) var(--ease-out);
+    }
+
+    .showcase-event-tickets:hover {
+      background: rgba(49, 170, 239, 0.1);
+      border-color: var(--electric-cyan);
+    }
+
+    /* Past showcases — compact card, dimmed treatment, sorted newest-first */
+    .showcase-past-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-3);
+    }
+
+    @media (min-width: 600px) {
+      .showcase-past-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .showcase-past-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .showcase-past-card {
+      position: relative;
+      background: rgba(5, 13, 60, 0.35);
+      border: 1px solid rgba(49, 170, 239, 0.12);
+      border-radius: var(--r-md);
+      padding: var(--sp-5);
+      opacity: 0.85;
+      transition: opacity var(--t-fast) var(--ease-out);
+    }
+
+    .showcase-past-card:hover {
+      opacity: 1;
+    }
+
+    .showcase-past-badge {
+      position: absolute;
+      top: var(--sp-3);
+      right: var(--sp-3);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--periwinkle);
+      background: rgba(181, 212, 244, 0.08);
+      border: 1px solid rgba(181, 212, 244, 0.18);
+      border-radius: 3px;
+      padding: 2px 7px;
+    }
+
+    .showcase-past-date {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--fs-md);
+      color: var(--periwinkle);
+      margin-bottom: var(--sp-2);
+      padding-right: 50px;
+    }
+
+    .showcase-past-venue {
+      font-size: var(--fs-base);
+      font-weight: 600;
+      color: var(--warm-white);
+      margin-bottom: 4px;
+    }
+
+    .showcase-past-type {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--electric-cyan);
+      opacity: 0.65;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Showcase</span>
+      <h1>Real reels. <em>Real Long Island nights.</em></h1>
+      <p>No stock footage. Every clip and every photo on this page was shot at an actual Tommy's Tunes event.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED REEL -->
+  <section class="section section-dark" id="featured-reel">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Featured reel</span>
+        <h2>The 60-second cut.</h2>
+        <p>A taste of what a packed dance floor looks like.</p>
+      </div>
+
+      <!-- EDIT: Featured reel video lives at /assets/videos/tommy-tunes-2025.mov.
+           Controls are visible so visitors choose when to play with sound. -->
+      <div class="reel-wrap">
+        <video controls preload="metadata" playsinline poster="/assets/images/showcase/curtis_with_b%26g.jpg">
+          <source src="/assets/videos/tommy-tunes-2025.mov" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="https://www.youtube.com/@tommystunes" target="_blank"
+            rel="noopener">Watch on YouTube instead.</a>
+        </video>
+      </div>
+
+      <p class="text-center mt-5" style="font-size: var(--fs-sm); color: var(--text-on-dark-soft);">
+        More on <a href="https://www.youtube.com/@tommystunes" target="_blank" rel="noopener"
+          style="color: var(--electric-cyan);">YouTube @tommystunes</a>, the full library of weddings, mitzvahs, and Sweet
+        16s.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHOTO GRID -->
+  <section class="section section-light" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Event photography</span>
+        <h2>Countless nights, <em>one feeling.</em></h2>
+        <p>Pulled from real events across Long Island.</p>
+      </div>
+
+      <!-- EDIT: Add or remove showcase images by editing the list below.
+           Each tile: <a class="showcase-tile" data-lightbox="..."><img src="..." alt="..."></a>
+           Click any tile to open it full-size in the lightbox.
+           Images keep their natural aspect ratio — no cropping. -->
+      <div class="showcase-masonry">
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/confetti.jpg">
+          <img src="/assets/images/showcase/confetti.jpg" alt="Groom celebrating in a confetti shower on the dance floor" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/curtis_with_b%26g.jpg">
+          <img src="/assets/images/showcase/curtis_with_b%26g.jpg" alt="Curtis with the bride and groom" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/dom_wedding.jpg">
+          <img src="/assets/images/showcase/dom_wedding.jpg" alt="Dom at a wedding reception" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/couple_on_cloud.jpg">
+          <img src="/assets/images/showcase/couple_on_cloud.jpg" alt="Couple's first dance on a cloud" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/dance_cloud.jpg">
+          <img src="/assets/images/showcase/dance_cloud.jpg" alt="Dancing on a cloud effect" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/dancing_on_dark_cloud.jpg">
+          <img src="/assets/images/showcase/dancing_on_dark_cloud.jpg" alt="First dance on a dark cloud" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/dance_stage.jpg">
+          <img src="/assets/images/showcase/dance_stage.jpg" alt="Illuminated dance stage" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/orange_couple.jpg">
+          <img src="/assets/images/showcase/orange_couple.jpg" alt="Couple under warm reception lighting"
+            loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/LOVE%20Letters.jpg">
+          <img src="/assets/images/showcase/LOVE%20Letters.jpg" alt="LOVE marquee letters at a wedding" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/giancarlo_espo.jpg">
+          <img src="/assets/images/showcase/giancarlo_espo.jpg" alt="Tommy's Tunes event moment" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/phonebooth.jpg">
+          <img src="/assets/images/showcase/phonebooth.jpg" alt="Vintage audio phone booth" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/kon_djing.jpg">
+          <img src="/assets/images/showcase/kon_djing.jpg" alt="Konstantine DJing a reception" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/class_tt_pic.jpg">
+          <img src="/assets/images/showcase/class_tt_pic.jpg" alt="Tommy's Tunes team photo" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/waters%20edge.jpg">
+          <img src="/assets/images/showcase/waters%20edge.jpg" alt="Reception at Water's Edge" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/IMG_4077.jpg">
+          <img src="/assets/images/showcase/IMG_4077.jpg" alt="Long Island wedding moment" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/IMG_4289%20(1).jpg">
+          <img src="/assets/images/showcase/IMG_4289%20(1).jpg" alt="Long Island wedding moment" loading="lazy">
+        </a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-01.jpg"><img
+            src="/assets/images/showcase/event-01.jpg" alt="Tommy's Tunes event moment 01" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-02.jpg"><img
+            src="/assets/images/showcase/event-02.jpg" alt="Tommy's Tunes event moment 02" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-03.jpg"><img
+            src="/assets/images/showcase/event-03.jpg" alt="Tommy's Tunes event moment 03" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-04.jpg"><img
+            src="/assets/images/showcase/event-04.jpg" alt="Tommy's Tunes event moment 04" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-05.jpg"><img
+            src="/assets/images/showcase/event-05.jpg" alt="Tommy's Tunes event moment 05" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-06.jpg"><img
+            src="/assets/images/showcase/event-06.jpg" alt="Tommy's Tunes event moment 06" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-07.jpg"><img
+            src="/assets/images/showcase/event-07.jpg" alt="Tommy's Tunes event moment 07" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-08.jpg"><img
+            src="/assets/images/showcase/event-08.jpg" alt="Tommy's Tunes event moment 08" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-09.jpg"><img
+            src="/assets/images/showcase/event-09.jpg" alt="Tommy's Tunes event moment 09" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-10.jpg"><img
+            src="/assets/images/showcase/event-10.jpg" alt="Tommy's Tunes event moment 10" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-11.jpg"><img
+            src="/assets/images/showcase/event-11.jpg" alt="Tommy's Tunes event moment 11" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-12.jpg"><img
+            src="/assets/images/showcase/event-12.jpg" alt="Tommy's Tunes event moment 12" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-13.jpg"><img
+            src="/assets/images/showcase/event-13.jpg" alt="Tommy's Tunes event moment 13" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-14.jpg"><img
+            src="/assets/images/showcase/event-14.jpg" alt="Tommy's Tunes event moment 14" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-15.jpg"><img
+            src="/assets/images/showcase/event-15.jpg" alt="Tommy's Tunes event moment 15" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-16.jpg"><img
+            src="/assets/images/showcase/event-16.jpg" alt="Tommy's Tunes event moment 16" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-17.jpg"><img
+            src="/assets/images/showcase/event-17.jpg" alt="Tommy's Tunes event moment 17" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-18.jpg"><img
+            src="/assets/images/showcase/event-18.jpg" alt="Tommy's Tunes event moment 18" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-19.jpg"><img
+            src="/assets/images/showcase/event-19.jpg" alt="Tommy's Tunes event moment 19" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-20.jpg"><img
+            src="/assets/images/showcase/event-20.jpg" alt="Tommy's Tunes event moment 20" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-21.jpg"><img
+            src="/assets/images/showcase/event-21.jpg" alt="Tommy's Tunes event moment 21" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-22.jpg"><img
+            src="/assets/images/showcase/event-22.jpg" alt="Tommy's Tunes event moment 22" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-23.jpg"><img
+            src="/assets/images/showcase/event-23.jpg" alt="Tommy's Tunes event moment 23" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-24.jpg"><img
+            src="/assets/images/showcase/event-24.jpg" alt="Tommy's Tunes event moment 24" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-25.jpg"><img
+            src="/assets/images/showcase/event-25.jpg" alt="Tommy's Tunes event moment 25" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-26.jpg"><img
+            src="/assets/images/showcase/event-26.jpg" alt="Tommy's Tunes event moment 26" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-27.jpg"><img
+            src="/assets/images/showcase/event-27.jpg" alt="Tommy's Tunes event moment 27" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-28.jpg"><img
+            src="/assets/images/showcase/event-28.jpg" alt="Tommy's Tunes event moment 28" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-29.jpg"><img
+            src="/assets/images/showcase/event-29.jpg" alt="Tommy's Tunes event moment 29" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-30.jpg"><img
+            src="/assets/images/showcase/event-30.jpg" alt="Tommy's Tunes event moment 30" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-31.jpg"><img
+            src="/assets/images/showcase/event-31.jpg" alt="Tommy's Tunes event moment 31" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-32.jpg"><img
+            src="/assets/images/showcase/event-32.jpg" alt="Tommy's Tunes event moment 32" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-33.jpg"><img
+            src="/assets/images/showcase/event-33.jpg" alt="Tommy's Tunes event moment 33" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-34.jpg"><img
+            src="/assets/images/showcase/event-34.jpg" alt="Tommy's Tunes event moment 34" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-35.jpg"><img
+            src="/assets/images/showcase/event-35.jpg" alt="Tommy's Tunes event moment 35" loading="lazy"></a>
+        <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-36.jpg"><img
+            src="/assets/images/showcase/event-36.jpg" alt="Tommy's Tunes event moment 36" loading="lazy"></a>
+      </div>
+
+      <p class="text-center mt-7" style="font-size: var(--fs-sm); color: var(--text-on-light-soft);">
+        More on <a href="https://instagram.com/djtommystunes" target="_blank" rel="noopener"
+          style="color: var(--royal-blue); text-decoration: underline;">Instagram @djtommystunes</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- NOTABLE CLIENTS / "THE ROOMS WE'VE BEEN IN"
+       EDIT: Once Tommy confirms his full list of notable clients and venues,
+       replace the placeholder text below with a clean grid of names, then
+       REMOVE the `hidden` attribute on the section to show it. Lead with
+       venues, layer in clients as one-liners. Keep the tone tasteful — proof,
+       not bragging. Hidden for launch so visitors don't see "check back soon". -->
+  <section class="section section-light" id="notable-rooms" hidden>
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">The rooms we've been in</span>
+        <h2>Forty years <em>across more than weddings.</em></h2>
+        <p>From iconic Long Island venues to professional sports clubs, recognizable names, and corporate stages. We're putting the list together. Check back soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING SHOWCASES
+       Events are managed in /js/data/showcases-data.js.
+       Empty array shows a "coming soon" fallback card.
+       Past events automatically render into the section below. -->
+  <section class="section section-dark" id="showcase-calendar-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">See us live</span>
+        <h2>Upcoming showcases.</h2>
+        <p>We do bridal showcases at Long Island venues throughout the year. Come meet the team, see the lighting setups
+          in person, and ask anything.</p>
+      </div>
+      <div class="showcase-calendar-grid" data-showcase-calendar></div>
+    </div>
+  </section>
+
+  <!-- PAST SHOWCASES (auto-populated from past dates in showcases-data.js, newest first; section hides if empty) -->
+  <section class="section section-dark" id="showcase-past-section" hidden>
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Where we've been</span>
+        <h2>Past showcases.</h2>
+        <p>A snapshot of the rooms we've shown up in. The actual list goes back forty years; this is the recent run.</p>
+      </div>
+      <div class="showcase-past-grid" data-showcase-past></div>
+    </div>
+  </section>
+
+  <!-- FULL GALLERIES CTA (SmugMug) -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Full galleries</span>
+        <h2>Browse every event, <em>uncut.</em></h2>
+        <p>We post full galleries from real Tommy's Tunes nights to SmugMug. Hundreds of photos per event, organized by
+          occasion.</p>
+      </div>
+      <div class="text-center">
+        <!-- EDIT: SmugMug gallery link. -->
+        <a class="btn btn-primary" href="https://tommystunes.smugmug.com/Venue-Photos" target="_blank"
+          rel="noopener">Open the
+          SmugMug gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">One date at a time</span>
+      <h2 class="display mt-6">Picture <em>your night</em> here.</h2>
+      <p>Tell us the date. We'll start building the reel of your event.</p>
+      <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/data/showcases-data.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+
+</html>

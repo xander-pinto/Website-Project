@@ -1,0 +1,351 @@
+/* ============================================================
+   Tommy's Tunes — detail page renderer
+   Powers /person.html, /service.html, /package.html.
+
+   Each template page sets <body data-detail-type="person|service|package">
+   and includes well-marked DOM slots that this script populates from
+   the matching data file (team-data.js, services-data.js, packages-data.js).
+
+   URL contract:  /person.html?slug=joe-cip
+   If the slug is missing or doesn't match, we render a "Not found" state.
+   ============================================================ */
+
+(function () {
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  function escapeHTML(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function setText(selector, value) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.textContent = value || '';
+    });
+  }
+
+  function setHTML(selector, value) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.innerHTML = value || '';
+    });
+  }
+
+  function setBackground(selector, url) {
+    document.querySelectorAll(selector).forEach((el) => {
+      if (url) el.style.backgroundImage = `url('${url}')`;
+    });
+  }
+
+  function setImg(selector, url, alt) {
+    document.querySelectorAll(selector).forEach((el) => {
+      if (url) el.src = url;
+      if (alt != null) el.alt = alt;
+    });
+  }
+
+  function showSection(selector) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.hidden = false;
+    });
+  }
+
+  function hideSection(selector) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.hidden = true;
+    });
+  }
+
+  function renderGallery(images) {
+    if (!images || !images.length) {
+      hideSection('[data-slot="gallery-section"]');
+      return;
+    }
+    const html = images
+      .map(
+        (src) => `
+          <a class="gallery-tile" href="${escapeHTML(src)}" data-lightbox="${escapeHTML(src)}">
+            <img src="${escapeHTML(src)}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+          </a>
+        `,
+      )
+      .join('');
+    setHTML('[data-slot="gallery"]', html);
+    showSection('[data-slot="gallery-section"]');
+  }
+
+  function backdropLabel(src) {
+    const file = src.split('/').pop() || '';
+    const name = file.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ');
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+
+  function renderBackdrops(images) {
+    if (!images || !images.length) {
+      hideSection('[data-slot="backdrops-section"]');
+      return;
+    }
+    const html = images
+      .map((src) => {
+        const label = backdropLabel(src);
+        return `
+          <a class="gallery-tile backdrop-tile" href="${escapeHTML(src)}" data-lightbox="${escapeHTML(src)}" title="${escapeHTML(label)}">
+            <img src="${escapeHTML(src)}" alt="${escapeHTML(label)}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            <span class="backdrop-label">${escapeHTML(label)}</span>
+          </a>
+        `;
+      })
+      .join('');
+    setHTML('[data-slot="backdrops"]', html);
+    showSection('[data-slot="backdrops-section"]');
+  }
+
+  function renderOneDemo(demo) {
+    if (!demo || !demo.url) return '';
+    let media = '';
+    if (demo.type === 'youtube') {
+      media = `<div class="demo-embed"><iframe src="${escapeHTML(demo.url)}" title="Demo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+    } else if (demo.type === 'instagram') {
+      media = `<div class="demo-embed"><iframe src="${escapeHTML(demo.url)}" title="Instagram" allowfullscreen></iframe></div>`;
+    } else if (demo.type === 'video') {
+      media = `<video controls preload="metadata" playsinline><source src="${escapeHTML(demo.url)}"></video>`;
+    }
+    if (!media) return '';
+    const caption = demo.caption ? `<p class="demo-caption">${escapeHTML(demo.caption)}</p>` : '';
+    return `<div class="demo-item">${media}${caption}</div>`;
+  }
+
+  // Accepts either a single `demo` object or a `demos` array (preferred).
+  function renderDemo(record) {
+    const list = Array.isArray(record.demos)
+      ? record.demos
+      : (record.demo ? [record.demo] : []);
+    const html = list.map(renderOneDemo).filter(Boolean).join('');
+    if (!html) {
+      hideSection('[data-slot="demo-section"]');
+      return;
+    }
+    setHTML('[data-slot="demo"]', html);
+    showSection('[data-slot="demo-section"]');
+  }
+
+  function renderReviews(record) {
+    const all = Array.isArray(window.TESTIMONIALS_DATA) ? window.TESTIMONIALS_DATA : [];
+    const picks = all.filter((r) => Array.isArray(r.slugs) && r.slugs.includes(record.slug));
+    if (!picks.length) {
+      hideSection('[data-slot="reviews-section"]');
+      return;
+    }
+    const html = picks.map((r) => {
+      const stars = '★'.repeat(r.rating || 5);
+      const meta = [r.event, r.source].filter(Boolean);
+      const metaHTML = r.source_url
+        ? `${escapeHTML(r.event || '')}${r.event && r.source ? ' · ' : ''}<a href="${escapeHTML(r.source_url)}" target="_blank" rel="noopener">${escapeHTML(r.source || '')}</a>`
+        : escapeHTML(meta.join(' · '));
+      return `
+        <blockquote class="testimonial">
+          <div class="testimonial-stars" aria-label="${r.rating || 5} out of 5 stars">${stars}</div>
+          <p class="testimonial-quote">&ldquo;${escapeHTML(r.quote)}&rdquo;</p>
+          <footer class="testimonial-attr">
+            <span class="testimonial-meta">${metaHTML}</span>
+          </footer>
+        </blockquote>
+      `;
+    }).join('');
+    setHTML('[data-slot="reviews"]', html);
+    showSection('[data-slot="reviews-section"]');
+  }
+
+  function renderSocials(socials) {
+    if (!socials) {
+      hideSection('[data-slot="socials-section"]');
+      return;
+    }
+    const items = [];
+    if (socials.instagram) items.push(`<a href="${escapeHTML(socials.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
+    if (socials.tiktok)    items.push(`<a href="${escapeHTML(socials.tiktok)}" target="_blank" rel="noopener">TikTok</a>`);
+    if (socials.youtube)   items.push(`<a href="${escapeHTML(socials.youtube)}" target="_blank" rel="noopener">YouTube</a>`);
+    if (!items.length) {
+      hideSection('[data-slot="socials-section"]');
+      return;
+    }
+    setHTML('[data-slot="socials"]', items.join(''));
+    showSection('[data-slot="socials-section"]');
+  }
+
+  /* --- "On this page" sticky bar: built from whichever sections have content --- */
+  function topOffset() {
+    const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'), 10) || 96;
+    return navH + 56; // nav + the toc bar itself
+  }
+
+  function buildTOC() {
+    const toc = document.querySelector('[data-slot="toc"]');
+    if (!toc) return;
+    const inner = toc.querySelector('.detail-toc-inner');
+    const sections = Array.from(document.querySelectorAll('[data-toc]')).filter((s) => !s.hidden);
+    if (sections.length < 2) {
+      toc.hidden = true;
+      return;
+    }
+    sections.forEach((sec, i) => {
+      if (!sec.id) sec.id = 'section-' + i;
+    });
+    inner.innerHTML = sections
+      .map((sec) => `<a href="#${sec.id}" data-toc-link="${sec.id}">${escapeHTML(sec.getAttribute('data-toc'))}</a>`)
+      .join('');
+    toc.hidden = false;
+
+    const links = new Map();
+    inner.querySelectorAll('[data-toc-link]').forEach((a) => links.set(a.getAttribute('data-toc-link'), a));
+    const setActive = (id) => links.forEach((a, key) => a.classList.toggle('is-active', key === id));
+    setActive(sections[0].id);
+
+    // Smooth-scroll on click (CSS scroll-margin-top handles the sticky offset).
+    inner.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActive(id);
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+
+    // Scroll-spy: highlight the section currently near the top.
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+          });
+        },
+        { rootMargin: `-${topOffset()}px 0px -55% 0px`, threshold: 0 },
+      );
+      sections.forEach((s) => obs.observe(s));
+    }
+  }
+
+  function renderNotFound(type) {
+    const labels = {
+      person: { title: 'Person not found', back: 'Back to the team', href: '/team.html' },
+      service: { title: 'Service not found', back: 'Back to services', href: '/services.html' },
+      package: { title: 'Package not found', back: 'Back to packages', href: '/packages.html' },
+    };
+    const cfg = labels[type] || labels.person;
+    const root = document.querySelector('[data-slot="detail-root"]');
+    if (!root) return;
+    root.innerHTML = `
+      <section class="section section-light">
+        <div class="container text-center">
+          <h1>${cfg.title}</h1>
+          <p style="margin-top: var(--sp-3);">We couldn't find that one. <a href="${cfg.href}">${cfg.back}</a>.</p>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderPerson(record) {
+    document.title = `${record.name} · Tommy's Tunes`;
+    setText('[data-slot="kicker"]', 'The team');
+    setText('[data-slot="name"]', record.name);
+    setText('[data-slot="role"]', record.role || '');
+    if (record.photo) {
+      setImg('[data-slot="hero-img"]', record.photo, record.name);
+      // Optional per-person framing tweak, e.g. photoStyle: 'transform: scale(1.4) translateX(6%);'
+      if (record.photoStyle) {
+        document.querySelectorAll('[data-slot="hero-img"]').forEach((el) => { el.style.cssText += record.photoStyle; });
+      }
+    } else {
+      hideSection('.profile-portrait');
+    }
+    setText('[data-slot="bio"]', record.bio || '');
+    renderDemo(record);
+    renderGallery(record.gallery);
+    renderReviews(record);
+    renderSocials(record.socials);
+    buildTOC();
+  }
+
+  function renderService(record) {
+    document.title = `${record.name} · Tommy's Tunes`;
+    setText('[data-slot="kicker"]', record.category || 'Services');
+    setText('[data-slot="name"]', record.name);
+    setText('[data-slot="role"]', record.shortDesc || '');
+    setBackground('[data-slot="hero-photo"]', record.photo);
+    setHTML('[data-slot="bio"]', record.longBody || record.shortDesc || '');
+    if (record.included && record.included.length) {
+      const html = record.included.map((item) => `<li>${escapeHTML(item)}</li>`).join('');
+      setHTML('[data-slot="included"]', html);
+      showSection('[data-slot="included-section"]');
+    } else {
+      hideSection('[data-slot="included-section"]');
+    }
+    renderDemo(record);
+    renderGallery(record.gallery);
+    renderBackdrops(record.backdrops);
+    hideSection('[data-slot="socials-section"]');
+    buildTOC();
+  }
+
+  function renderPackage(record) {
+    document.title = `${record.name} · Tommy's Tunes`;
+    setText('[data-slot="kicker"]', 'Packages');
+    setText('[data-slot="name"]', record.name);
+    setText('[data-slot="role"]', record.tagline || '');
+    setBackground('[data-slot="hero-photo"]', record.photo);
+    setText('[data-slot="bio"]', record.longBody || '');
+    if (record.included && record.included.length) {
+      const html = record.included.map((item) => `<li>${escapeHTML(item)}</li>`).join('');
+      setHTML('[data-slot="included"]', html);
+      showSection('[data-slot="included-section"]');
+    } else {
+      hideSection('[data-slot="included-section"]');
+    }
+    renderDemo(record);
+    renderGallery(record.gallery);
+    hideSection('[data-slot="socials-section"]');
+    buildTOC();
+  }
+
+  function boot() {
+    const type = document.body.dataset.detailType;
+    if (!type) return;
+
+    const slug = getParam('slug') || document.body.dataset.slug;
+    let pool = null;
+    if (type === 'person')  pool = window.TEAM_DATA;
+    if (type === 'service') pool = window.SERVICES_DATA;
+    if (type === 'package') pool = window.PACKAGES_DATA;
+
+    if (!pool) {
+      console.warn('[detail-render] data pool missing for', type);
+      renderNotFound(type);
+      return;
+    }
+
+    const record = pool.find((r) => r.slug === slug);
+    if (!record) {
+      renderNotFound(type);
+      return;
+    }
+
+    if (type === 'person')  renderPerson(record);
+    if (type === 'service') renderService(record);
+    if (type === 'package') renderPackage(record);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();

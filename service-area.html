@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Service area · Tommy's Tunes</title>
+  <meta name="description" content="Tommy's Tunes serves all of Long Island: Nassau County, Suffolk County, the Hamptons, and the North Fork. Forty years of weddings, mitzvahs, and Sweet 16s.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Service area · Tommy's Tunes">
+  <meta property="og:description" content="All of Long Island. Nassau, Suffolk, the Hamptons, and the North Fork.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/service-area.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886",
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Nassau County, NY" },
+      { "@type": "AdministrativeArea", "name": "Suffolk County, NY" },
+      { "@type": "AdministrativeArea", "name": "The Hamptons, NY" },
+      { "@type": "AdministrativeArea", "name": "North Fork, NY" }
+    ]
+  }
+  </script>
+
+  <style>
+    .map-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 0;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--light-sky);
+    }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-5);
+    }
+    @media (min-width: 700px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .area-grid { grid-template-columns: repeat(4, 1fr); } }
+    .area-card {
+      background: var(--warm-white);
+      border: 1px solid rgba(26, 26, 31, 0.08);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+    }
+    .area-card h3 {
+      font-size: var(--fs-md);
+      margin-bottom: var(--sp-2);
+    }
+    .area-card .area-towns {
+      font-size: var(--fs-sm);
+      line-height: 1.7;
+      color: var(--text-on-light-soft);
+    }
+  </style>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Service area</span>
+      <h1>All of Long Island. <em>Every weekend.</em></h1>
+      <p>From Manhasset to Montauk, Massapequa to Mattituck. We've worked all of it for forty years.</p>
+    </div>
+  </section>
+
+  <!-- MAP + COVERAGE STATEMENT -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="overline">Where we work</span>
+        <h2>Nassau, Suffolk, <em>the Hamptons, and the North Fork.</em></h2>
+        <p>Two locations on Long Island, a showroom in Selden and an office in Melville. Same crew, same standards, no matter which end of the island your venue is on.</p>
+      </div>
+
+      <!-- EDIT: Map searches for the business by name — shows both location pins with no route. -->
+      <iframe class="map-frame"
+              src="https://maps.google.com/maps?q=Tommy%27s+Tunes+DJ+Entertainment&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Tommy's Tunes locations: Selden showroom and Melville office"></iframe>
+
+    </div>
+  </section>
+
+  <!-- COVERAGE BY REGION -->
+  <section class="section section-tinted">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="overline">By region</span>
+        <h2>Four regions, <em>one team.</em></h2>
+        <p>If your town isn't listed, ask anyway. The honest answer is we probably work there.</p>
+      </div>
+
+      <div class="area-grid">
+
+        <article class="area-card">
+          <h3>Nassau · North Shore</h3>
+          <p class="area-towns">Manhasset · Great Neck · Port Washington · Roslyn · Glen Cove · Locust Valley · Oyster Bay · Cold Spring Harbor · Huntington · Centerport · Northport · Lloyd Harbor</p>
+        </article>
+
+        <article class="area-card">
+          <h3>Nassau · South Shore</h3>
+          <p class="area-towns">Garden City · Rockville Centre · Lynbrook · Valley Stream · Long Beach · Atlantic Beach · Massapequa · Wantagh · Bellmore · Merrick · Freeport · Hempstead</p>
+        </article>
+
+        <article class="area-card">
+          <h3>Western Suffolk</h3>
+          <p class="area-towns">Melville · Dix Hills · Smithtown · Commack · Stony Brook · Setauket · Port Jefferson · Patchogue · Sayville · Bay Shore · Babylon · Lindenhurst · Selden · Centereach</p>
+        </article>
+
+        <article class="area-card">
+          <h3>East End · Hamptons &amp; North Fork</h3>
+          <p class="area-towns">Westhampton · Quogue · Hampton Bays · Southampton · Bridgehampton · East Hampton · Montauk · Sag Harbor · Riverhead · Mattituck · Cutchogue · Greenport · Shelter Island</p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRAVEL NOTE -->
+  <section class="section section-light">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <h2>Off the island? <em>Sometimes, ask us.</em></h2>
+        <p style="margin-top: var(--sp-4); font-size: var(--fs-md);">
+          We occasionally take events in NYC, Westchester, southern Connecticut, and the Jersey Shore. Travel may apply. The honest answer is yes more often than you'd guess.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">Where's your night?</span>
+      <h2 class="display mt-6">If your venue is on Long Island, <em>we're already there.</em></h2>
+      <p>Tell us the date and the venue. We'll tell you who knows the room.</p>
+      <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Team member · Tommy's Tunes</title>
+  <meta name="description" content="Meet a named member of the Tommy's Tunes team. Long Island DJ entertainment since 1985.">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Team member · Tommy's Tunes">
+  <meta property="og:description" content="One of the named DJs and MCs on the Tommy's Tunes roster.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886"
+  }
+  </script>
+</head>
+<body data-detail-type="person">
+
+  <div data-component="nav"></div>
+
+  <div data-slot="detail-root">
+
+    <!-- DETAIL HERO (profile) -->
+    <section class="detail-hero detail-hero--profile">
+      <div class="starfield"></div>
+      <div class="container detail-hero-content">
+        <div class="profile-portrait">
+          <img data-slot="hero-img" alt="">
+        </div>
+        <div class="profile-meta">
+          <span class="kicker" data-slot="kicker">The team</span>
+          <h1 data-slot="name">&nbsp;</h1>
+          <p class="detail-hero-role" data-slot="role"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ON THIS PAGE (built by detail-render.js from the visible sections) -->
+    <nav class="detail-toc" data-slot="toc" aria-label="On this page" hidden>
+      <div class="detail-toc-inner"></div>
+    </nav>
+
+    <!-- BIO -->
+    <section class="section section-light" data-toc="About">
+      <div class="container detail-body">
+        <p class="lead" data-slot="bio"></p>
+      </div>
+    </section>
+
+    <!-- GALLERY (hidden if empty) -->
+    <section class="section section-tinted" data-slot="gallery-section" data-toc="Photos" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">From the floor</span>
+          <h2>Real nights, <em>real photos.</em></h2>
+        </div>
+        <div class="gallery-grid" data-slot="gallery"></div>
+      </div>
+    </section>
+
+    <!-- DEMO (hidden if empty) -->
+    <section class="section section-light" data-slot="demo-section" data-toc="Video" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Demo</span>
+          <h2>See them <em>in the room.</em></h2>
+        </div>
+        <div class="detail-demo" data-slot="demo"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (hidden if empty) -->
+    <section class="section section-tinted" data-slot="reviews-section" data-toc="Reviews" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">In their words</span>
+          <h2>What couples <em>say about them.</em></h2>
+        </div>
+        <div class="reviews-list" data-slot="reviews"></div>
+      </div>
+    </section>
+
+    <!-- SOCIALS (hidden if empty) -->
+    <section class="section section-light" data-slot="socials-section" data-toc="Follow" hidden>
+      <div class="container text-center">
+        <span class="overline">Follow along</span>
+        <div class="socials-row" data-slot="socials"></div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="starfield"></div>
+      <div class="container">
+        <span class="overline">One date at a time</span>
+        <h2 class="display mt-6">Want them <em>on your night?</em></h2>
+        <p>Mention them by name when you check your date. We'll let you know if they're available.</p>
+        <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+      </div>
+    </section>
+
+  </div>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/data/team-data.js"></script>
+  <script src="/js/data/testimonials-data.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/detail-render.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact · Tommy's Tunes</title>
+  <meta name="description" content="Tommy's Tunes DJ Entertainment. Selden showroom and Melville office on Long Island. 631-732-5886.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact · Tommy's Tunes">
+  <meta property="og:description" content="Selden showroom, Melville office. Call us, we pick up.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886",
+    "email": "info@tommystunes.com"
+  }
+  </script>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Contact</span>
+      <h1>Pick a way <em>to reach us.</em></h1>
+      <p>The fastest way is the form below. The most personal is a call. We answer both.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- LEFT: location cards + phone/email -->
+        <div>
+          <!-- EDIT: Selden showroom -->
+          <div class="contact-card">
+            <span class="overline" style="display:block; margin-bottom: var(--sp-2);">Showroom</span>
+            <h3>Selden: visit the showroom</h3>
+            <address>
+              691 Middle Country Road<br>
+              Selden, NY 11784
+            </address>
+            <div class="hours">
+              <strong style="color: var(--charcoal); display:block; margin-bottom: 4px;">Hours</strong>
+              Monday–Thursday · 10:00am to 8:00pm<br>
+              Friday · 10:00am to 5:00pm<br>
+              Saturday · 9:00am to 5:00pm<br>
+              Sunday · closed
+            </div>
+          </div>
+
+          <!-- EDIT: Melville office -->
+          <div class="contact-card">
+            <span class="overline" style="display:block; margin-bottom: var(--sp-2);">Office</span>
+            <h3>Melville: by appointment</h3>
+            <address>
+              68 South Service Road<br>
+              Melville, NY 11747
+            </address>
+            <div class="hours">
+              <strong style="color: var(--charcoal); display:block; margin-bottom: 4px;">Hours</strong>
+              Monday–Thursday · 12:00pm to 8:00pm<br>
+              Saturday · 11:00am to 3:00pm<br>
+              Friday &amp; Sunday · closed
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Talk to us</h3>
+            <p style="margin-bottom: var(--sp-3);">
+              <strong style="color: var(--charcoal);">Phone</strong><br>
+              <a href="tel:6317325886" style="color: var(--royal-blue); font-size: var(--fs-md); text-decoration:none;">631-732-5886</a>
+            </p>
+            <p>
+              <strong style="color: var(--charcoal);">Email</strong><br>
+              <a href="mailto:info@tommystunes.com" style="color: var(--royal-blue); text-decoration:none;">info@tommystunes.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT: inline form (same fields as modal) -->
+        <div>
+          <div class="contact-card" style="padding: var(--sp-7);">
+            <h3 style="font-size: var(--fs-h3); margin-bottom: var(--sp-2);">Check your date.</h3>
+            <p style="font-size: var(--fs-sm); color: var(--text-on-light-soft); margin-bottom: var(--sp-5);">
+              We respond within one business day with a quote that fits your night. Or call us at 631-732-5886.
+            </p>
+
+            <form name="check-your-date" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap: var(--sp-4);">
+              <input type="hidden" name="form-name" value="check-your-date">
+              <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+              <div class="field">
+                <label for="page-name">Your name</label>
+                <input type="text" id="page-name" name="name" required autocomplete="name">
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="page-email">Email</label>
+                  <input type="email" id="page-email" name="email" required autocomplete="email">
+                </div>
+                <div class="field">
+                  <label for="page-phone">Phone</label>
+                  <input type="tel" id="page-phone" name="phone" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="page-date">Event date</label>
+                  <input type="date" id="page-date" name="event_date">
+                  <label class="field-checkbox">
+                    <input type="checkbox" name="no_date_yet" value="yes" onchange="document.getElementById('page-date').disabled = this.checked; if(this.checked) document.getElementById('page-date').value='';">
+                    <span>I don't know my date yet</span>
+                  </label>
+                </div>
+                <div class="field">
+                  <label for="page-type">Event type</label>
+                  <select id="page-type" name="event_type" required>
+                    <option value="">Choose one</option>
+                    <option>Wedding</option>
+                    <option>Sweet 16</option>
+                    <option>Bar / Bat Mitzvah</option>
+                    <option>Quinceañera</option>
+                    <option>Corporate event</option>
+                    <option>Private party</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="page-venue">Venue or town (optional)</label>
+                <input type="text" id="page-venue" name="venue">
+              </div>
+
+              <div class="field">
+                <label for="page-referral">How did you hear about us?</label>
+                <!-- EDIT: Referral sources — keep these in sync with the modal form. -->
+                <select id="page-referral" name="referral_source" required>
+                  <option value="">Choose one</option>
+                  <option>Google search</option>
+                  <option>The Knot</option>
+                  <option>WeddingWire</option>
+                  <option>Zola</option>
+                  <option>Instagram or Facebook</option>
+                  <option>Friend or family</option>
+                  <option>Our venue recommended us</option>
+                  <option>Bridal show or showcase</option>
+                  <option>Booked us before</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Shown only when "Other" is selected (toggled by setupReferralOther in main.js). -->
+              <div class="field" data-referral-other hidden>
+                <label for="page-referral-other">Where did you hear about us?</label>
+                <input type="text" id="page-referral-other" name="referral_other" placeholder="Tell us where you heard about us">
+              </div>
+
+              <div class="field">
+                <label for="page-notes">Anything else?</label>
+                <textarea id="page-notes" name="notes" placeholder="Guest count, vibe, questions, anything helps."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send it</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">Or just call</span>
+      <h2 class="display mt-6">631-732-5886.</h2>
+      <p>If we can't pick up, we call back the same day.</p>
+      <a class="btn btn-primary" href="tel:6317325886">Call now</a>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
