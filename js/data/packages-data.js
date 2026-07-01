@@ -40,7 +40,7 @@ window.PACKAGES_DATA = [
     slug: 'super-deluxe',
     name: 'Super Deluxe Entertainment',
     tagline: 'Same team from ceremony through last dance, with the illuminated DJ booth.',
-    photo: '',
+    photo: '/assets/images/packages/super-deluxe/super_deluxe_pf.jpg',
     longBody: 'Adds an extra 90 minutes of music coverage and the illuminated DJ booth. Your DJ runs music for the ceremony and cocktail hour as well as the reception, and the booth itself becomes part of the décor, colored to match your palette.',
     included: [
       '5½ hours of music & entertainment',
