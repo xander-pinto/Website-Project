@@ -7,6 +7,23 @@
   command = "node scripts/generate.js"
   publish = "."
 
+# Baseline security headers for every page and asset.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Client forms (including the confidential credit card authorization form)
+# stay downloadable for the office workflow, but should never appear in
+# search results on their own.
+[[headers]]
+  for = "/assets/forms/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 # Internal files that must stay in the repo but should never be served:
 # CLAUDE.md (read by Claude Code) and the build script. Return 404 publicly.
 [[redirects]]
