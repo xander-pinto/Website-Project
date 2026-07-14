@@ -343,7 +343,7 @@ const hasRealPhoto = (p) => p.photo && !/empty_image/i.test(p.photo);
 // EDIT: People to keep OUT of the homepage "Meet the crew" rotation — staff who
 // only pick up the occasional shift. They still appear on the full team page;
 // they just won't show as featured crew. Add or remove slugs here.
-const CREW_EXCLUDE = new Set(['yianni', 'waldo', 'victor']);
+const CREW_EXCLUDE = new Set(['yianni', 'waldo']);
 
 function renderFeaturedTalent() {
   document.querySelectorAll('[data-rotation="team"]').forEach((slot) => {

@@ -303,17 +303,6 @@ window.TEAM_DATA = [
     demo: null,
     gallery: [],
   },
-  {
-    slug: 'victor',
-    name: 'Victor',
-    role: 'DJ',
-    photo: '/assets/images/team/djs/victor/Victor_pf.jpg',
-    bio: 'Victor came up in the club scene, where he spent years as one of the busier DJs on the circuit. He picks up events with us here and there, and that nightlife pedigree comes with him every time.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
-    gallery: [],
-  },
-
   /* ----------------------- Live musicians ----------------------- */
   {
     slug: 'mark',
@@ -374,8 +363,8 @@ window.TEAM_DATA = [
     gallery: [],
   },
   {
-    slug: 'mariano',
-    name: 'Mariano',
+    slug: 'marino',
+    name: 'Marino',
     role: 'Saxophonist',
     photo: '/assets/images/team/empty_image.jpg',
     bio: 'A saxophone player on the Tommy\'s Tunes roster, bringing a live horn to cocktail hour and reception sets.',
