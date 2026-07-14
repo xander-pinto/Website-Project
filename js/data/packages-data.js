@@ -9,7 +9,7 @@ window.PACKAGES_DATA = [
     slug: 'basic',
     name: 'Basic Entertainment',
     tagline: 'For intimate weddings and small gatherings of 75 or fewer.',
-    photo: '',
+    photo: '/assets/images/packages/basic/basic_pf.jpg',
     longBody: 'The right tier for intimate weddings, microweddings, and small private events. One named DJ/MC running the entire night, same person on the music, the mic, and your timeline. The straightforward Tommy\'s Tunes experience without any production extras.',
     included: [
       '4 hours of music & entertainment',
@@ -24,7 +24,7 @@ window.PACKAGES_DATA = [
     slug: 'deluxe',
     name: 'Deluxe Entertainment',
     tagline: 'The Long Island wedding standard. DJ on the music, MC working the room.',
-    photo: '',
+    photo: '/assets/images/packages/deluxe/deluxe_pf.jpg',
     longBody: 'The most-booked package on Long Island. Two named talent, a DJ focused entirely on the music, and a dedicated MC working the room and the timeline. The split lets each person do one job well, which is the difference you feel on the dance floor.',
     included: [
       '4 hours of music & entertainment',
