@@ -59,6 +59,15 @@ window.SHOWCASES_DATA = [
     ticketUrl: 'https://longislandbridalexpo.com/longisland-bridal-shows-2/',
   },
   {
+    date: '2026-08-19',
+    dateDisplay: 'August 19, 2026',
+    time: 'Doors at 6:00pm',
+    venue: 'The Watermill',
+    type: 'Bridal Showcase',
+    note: 'Smithtown. Stop by the Tommy\'s Tunes table and talk through your night.',
+    ticketUrl: 'https://watermillcaterers.ticketspice.com/august-19-2026-showcase',
+  },
+  {
     date: '2026-09-16',
     dateDisplay: 'September 16, 2026',
     time: '6:30pm – 9:00pm',
