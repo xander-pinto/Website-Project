@@ -24,6 +24,13 @@
   [headers.values]
     X-Robots-Tag = "noindex"
 
+# The old Wix site had a packages brochure at /brochure; printed matter and
+# old links still point there. Send them to the packages page.
+[[redirects]]
+  from = "/brochure"
+  to = "/packages.html"
+  status = 301
+
 # Internal files that must stay in the repo but should never be served:
 # CLAUDE.md (read by Claude Code) and the build script. Return 404 publicly.
 [[redirects]]

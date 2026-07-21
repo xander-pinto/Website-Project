@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music suggestions · Tommy's Tunes</title>
+  <meta name="description" content="Curated Spotify playlists for every moment of your event: ceremony, first dances, parent dances, cake cutting, montages, and the party itself.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Music suggestions · Tommy's Tunes">
+  <meta property="og:description" content="Real playlists for every moment of your night, curated by the Tommy's Tunes team.">
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://tommystunes.com/music-suggestions.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tommy's Tunes DJ Entertainment",
+    "url": "https://tommystunes.com",
+    "telephone": "+1-631-732-5886"
+  }
+  </script>
+
+  <style>
+    .form-group { margin-bottom: var(--sp-9); }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-group-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: var(--sp-5);
+      padding-bottom: var(--sp-3);
+      border-bottom: 1px solid rgba(26, 26, 31, 0.12);
+    }
+    .form-group h3 {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h3);
+      font-weight: 500;
+    }
+    .form-group-meta {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--royal-blue);
+    }
+    .download-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-4);
+    }
+    @media (min-width: 700px) { .download-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .download-card {
+      background: var(--warm-white);
+      border: 1px solid rgba(26, 26, 31, 0.08);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none;
+      transition: border-color var(--t-fast) var(--ease-out),
+                  transform var(--t-fast) var(--ease-out);
+    }
+    .download-card:hover {
+      border-color: rgba(11, 94, 222, 0.3);
+      transform: translateY(-2px);
+    }
+    .download-icon {
+      width: 40px; height: 40px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--light-sky);
+      color: var(--royal-blue);
+      border-radius: var(--r-md);
+      flex-shrink: 0;
+    }
+    .download-card h4 {
+      font-family: var(--font-serif);
+      font-size: var(--fs-md);
+      font-weight: 500;
+      color: var(--charcoal);
+      margin: 0;
+    }
+    .download-card p { font-size: var(--fs-sm); color: var(--text-on-light-soft); flex-grow: 1; }
+    .download-meta {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--royal-blue);
+      margin-top: var(--sp-2);
+    }
+
+    .spotify-follow {
+      margin-top: var(--sp-8);
+      text-align: center;
+    }
+    .spotify-follow p {
+      font-size: var(--fs-sm);
+      color: var(--text-on-light-soft);
+      margin-bottom: var(--sp-4);
+    }
+  </style>
+</head>
+<body>
+
+  <div data-component="nav"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="kicker">Music suggestions</span>
+      <h1>The right song <em>for every moment.</em></h1>
+      <p>Forty years of watching what works, turned into playlists. Start here, then make them yours.</p>
+    </div>
+  </section>
+
+  <!-- PLAYLISTS -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="overline">Curated on Spotify</span>
+        <h2>Real playlists. <em>Press play.</em></h2>
+        <p>Every list below opens on Spotify so you can hear full songs, not titles on paper. Save what you love and bring it to your planning meeting.</p>
+      </div>
+
+      <!-- EDIT: Playlist links live on the Tommy's Tunes Spotify account. To add or
+           swap a playlist, copy its Spotify share link and update the card below. -->
+
+      <div class="form-group">
+        <div class="form-group-head">
+          <h3>Wedding moments</h3>
+          <span class="form-group-meta">11 playlists</span>
+        </div>
+        <div class="download-grid">
+
+          <a class="download-card" href="https://open.spotify.com/playlist/4pHcN6jxbAy1YJilYvI2Pr" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Ceremony songs</h4>
+            <p>Processionals and quiet moments. The walk down the aisle, scored right.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/3hfUtqAZXIUAdvglmcYkY9" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Wedding intro music</h4>
+            <p>Grand entrance songs that bring the room to its feet before the first dance.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/50OSvMYI9KmRT6Vk4UmLlu" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>First dance</h4>
+            <p>The song everyone remembers. Classics and new favorites couples pick most.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/6Tu5NTLBucGtZoJmfGvNZS" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Bride and father dance</h4>
+            <p>Songs for the dad who has been waiting for this dance her whole life.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/3rPvWMQ2DvwO30YngPRBN5" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Bride and mom dance</h4>
+            <p>For the moms who get their own moment on the floor.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/27dv2xYuA77IrPOhr6IRlS" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Groom and mom dance</h4>
+            <p>The mother and son classics, plus a few surprises that land just as hard.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/4obUhNlasmsnrF20Fyi4vN" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Cake cutting</h4>
+            <p>Sweet, playful songs for the moment with the knife and the cameras out.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/07xZZjkrqpq26YQ6GOcwmL" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Final song</h4>
+            <p>How you end the night matters. Send-offs that leave the floor wanting one more.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/3EdLH9MBhIFdbjoOJ9xOpA" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Montage songs for the bride</h4>
+            <p>Backing tracks for her photo montage, from childhood pictures to now.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/0D2tt9pu7qhNUn9QBVEorg" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Montage songs for the groom</h4>
+            <p>Backing tracks for his side of the story.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/6Unv67Y8jnx0KU1TP49Nwh" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Montage songs for the couple</h4>
+            <p>For the montage that tells the story of the two of you together.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group-head">
+          <h3>Parties &amp; milestones</h3>
+          <span class="form-group-meta">3 playlists</span>
+        </div>
+        <div class="download-grid">
+
+          <a class="download-card" href="https://open.spotify.com/playlist/3zFJtN7NIEdUBbIez9P4no" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>100 of the best party songs</h4>
+            <p>The floor-fillers. Four decades of what actually packs a dance floor.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/2kekbNdMbEWnmFk25sMHB5" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Birthday celebration songs</h4>
+            <p>Milestone birthdays, sweet sixteens to seventy-fifths. Energy for every age in the room.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+          <a class="download-card" href="https://open.spotify.com/playlist/48T90KBkLZMGrSzrOTEqlv" target="_blank" rel="noopener">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Sweet 16 montage songs</h4>
+            <p>Backing tracks for the montage, from baby pictures to the big year.</p>
+            <span class="download-meta">Listen on Spotify</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="spotify-follow">
+        <p>Want more? The full library of genre playlists lives on our Spotify account.</p>
+        <a class="btn btn-secondary" href="https://open.spotify.com/user/octagap5185mxgie81n4i98ck" target="_blank" rel="noopener">Follow Tommy's Tunes on Spotify</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MUSIC FORMS -->
+  <section class="section section-tinted">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="overline">Put it on paper</span>
+        <h2>Found your songs? <em>Write them down.</em></h2>
+        <p>These two forms are how your picks get to your DJ. Preview them here, or grab everything else on the forms page.</p>
+      </div>
+
+      <div class="download-grid">
+
+        <button type="button" class="download-card" data-doc="/assets/forms/Music%20Selections%202026.pdf" data-doc-name="Music Selections 2026">
+          <div class="download-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h4>Music selections</h4>
+          <p>The master list: must-plays, do-not-plays, and every formal moment's song.</p>
+          <span class="download-meta">PDF</span>
+        </button>
+
+        <button type="button" class="download-card" data-doc="/assets/forms/Genres%20of%20Music%202026.pdf" data-doc-name="Genres of Music 2026">
+          <div class="download-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h4>Genres of music</h4>
+          <p>Tell us how much of each genre you want in the mix, from Motown to merengue.</p>
+          <span class="download-meta">PDF</span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="starfield"></div>
+    <div class="container">
+      <span class="overline">Not booked yet?</span>
+      <h2 class="display mt-6">Start with <em>your date.</em></h2>
+      <p>Playlists are the fun part. Availability comes first.</p>
+      <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+    </div>
+  </section>
+
+  <div data-component="footer"></div>
+  <div data-component="modal"></div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
