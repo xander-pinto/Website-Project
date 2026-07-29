@@ -19,6 +19,10 @@ Two constraints drove every architecture decision:
 1. **The owner edits content weekly and isn't technical.** That ruled out a CMS (login friction), a JS framework (build complexity), and anything that puts editing behind tooling. He opens a JS data file, changes a line, commits. The site updates.
 2. **The site needed to rank on Google for Long Island event queries.** Original client-rendered detail pages looked empty to crawlers. The fix was a static site generator that bakes the right title, meta description, and content into the HTML at build time, before JS ever runs.
 
+## Results
+
+Since launch the site pulls roughly 950 sessions a month and drives three to four inbound booking leads a day, up from about one a day on the old Wix build. Same business, same market, no ad spend added. The difference is a site that ranks for Long Island event queries and actually converts the traffic it earns.
+
 ## Stack
 
 | Layer | Tool |
