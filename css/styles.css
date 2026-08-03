@@ -1902,7 +1902,9 @@ p {
 }
 
 .award-badge span {
-  opacity: 0.75;
+  color: var(--warm-white);
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 
