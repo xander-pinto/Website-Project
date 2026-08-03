@@ -22,6 +22,7 @@ const COMPONENTS = {
   nav: '/components/nav.html',
   footer: '/components/footer.html',
   modal: '/components/modal-check-your-date.html',
+  awards: '/components/awards.html',
 };
 
 async function loadComponents() {
