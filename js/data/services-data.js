@@ -22,7 +22,6 @@ const BACKDROPS = [
   '/assets/images/services/photo-booths/backdrops/disney_castle.avif',
   '/assets/images/services/photo-booths/backdrops/fireworks.avif',
   '/assets/images/services/photo-booths/backdrops/fuchsia_sequins.avif',
-  '/assets/images/services/photo-booths/backdrops/galaxy.avif',
   '/assets/images/services/photo-booths/backdrops/gold_dots.avif',
   '/assets/images/services/photo-booths/backdrops/gold_holiday.avif',
   '/assets/images/services/photo-booths/backdrops/gold_roses.avif',
@@ -286,7 +285,7 @@ window.SERVICES_DATA = [
     name: 'Mirror booth',
     shortDesc: 'Guests print, text, or email their photos on the spot.',
     photo: '/assets/images/services/photo-booths/mirror-booth/mirror_booth_pf.jpg',
-    longBody: 'The Magic Mirror is the newest option in the lineup. It prints a 2x6 or 4x6 in color or black and white, and guests can also have their photos texted or emailed directly from the machine. It draws a crowd, moves quickly, and keeps people engaged throughout the night. Choose from 29 backdrop designs, from sequins and roses to rustic barn doors to themed prints. Flowerwall backdrops are available as an upgrade.',
+    longBody: 'The Magic Mirror is the newest option in the lineup. It prints a 2x6 or 4x6 in color or black and white, and guests can also have their photos texted or emailed directly from the machine. It draws a crowd, moves quickly, and keeps people engaged throughout the night. Choose from 28 backdrop designs, from sequins and roses to rustic barn doors to themed prints. Flowerwall backdrops are available as an upgrade.',
     included: [
       'Professional attendant to assist guests',
       'Props to make your pictures even more exciting',
@@ -294,7 +293,7 @@ window.SERVICES_DATA = [
       'Unlimited 2x6 photo strips or 4x6 photos',
       'Customized photo strip',
       'USB or digital link with all pictures taken',
-      'Choice of backdrop (29 designs)',
+      'Choice of backdrop (28 designs)',
       'Flowerwall backdrop available as an upgrade',
     ],
     demos: [
@@ -311,7 +310,7 @@ window.SERVICES_DATA = [
     name: 'Glam booth',
     shortDesc: 'High-end black-and-white editorial photos. Magazine-style.',
     photo: '/assets/images/services/photo-booths/glam-booth/glam_booth_pf.jpg',
-    longBody: 'The Beauty Glam Booth is a single-exposure setup. The filter is applied in-camera, and the result is a polished, black-and-white editorial-style 4x6 print. Guests can also have the photo texted or emailed. It photographs well in any lighting and tends to draw repeat visitors throughout the night. Choose from 29 backdrop designs, from sequins and roses to rustic barn doors to themed prints.',
+    longBody: 'The Beauty Glam Booth is a single-exposure setup. The filter is applied in-camera, and the result is a polished, black-and-white editorial-style 4x6 print. Guests can also have the photo texted or emailed. It photographs well in any lighting and tends to draw repeat visitors throughout the night. Choose from 28 backdrop designs, from sequins and roses to rustic barn doors to themed prints.',
     included: [
       'Professional attendant to assist guests',
       'Props to make your pictures even more exciting',
@@ -319,7 +318,7 @@ window.SERVICES_DATA = [
       'Unlimited 2x6 photo strips or 4x6 photos',
       'Customized photo strip',
       'USB or digital link with all pictures taken',
-      'Choice of backdrop (29 designs)',
+      'Choice of backdrop (28 designs)',
       'Flowerwall backdrop available as an upgrade',
     ],
     demos: [
@@ -334,7 +333,7 @@ window.SERVICES_DATA = [
     name: 'Open-air booth',
     shortDesc: 'An 8x8 backdrop built for the whole table to squeeze into.',
     photo: '/assets/images/services/photo-booths/open-air-booth/openair_booth_pf.jpg',
-    longBody: 'The Open Air Booth is built for groups. The 8x8 backdrop fits large families, full wedding parties, and anyone who refuses to be left out. It prints a 2x6 strip in color or black and white. Simple setup, fast flow, and no line that goes nowhere. Choose from 29 backdrop designs, from sequins and roses to rustic barn doors to themed prints. Flowerwall backdrops are available as an upgrade.',
+    longBody: 'The Open Air Booth is built for groups. The 8x8 backdrop fits large families, full wedding parties, and anyone who refuses to be left out. It prints a 2x6 strip in color or black and white. Simple setup, fast flow, and no line that goes nowhere. Choose from 28 backdrop designs, from sequins and roses to rustic barn doors to themed prints. Flowerwall backdrops are available as an upgrade.',
     included: [
       'Professional attendant to assist guests',
       'Props to make your pictures even more exciting',
@@ -342,7 +341,7 @@ window.SERVICES_DATA = [
       'Unlimited 2x6 photo strips or 4x6 photos',
       'Customized photo strip',
       'USB or digital link with all pictures taken',
-      'Choice of backdrop (29 designs)',
+      'Choice of backdrop (28 designs)',
       'Flowerwall backdrop available as an upgrade',
     ],
     demo: null,
