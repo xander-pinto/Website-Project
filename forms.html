@@ -31,7 +31,7 @@
   </script>
 
   <style>
-    .form-group { margin-bottom: var(--sp-9); }
+    .form-group { margin-bottom: var(--sp-8); }
     .form-group:last-child { margin-bottom: 0; }
     .form-group-head {
       display: flex;
@@ -55,18 +55,19 @@
     .download-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--sp-4);
+      gap: var(--sp-3);
     }
     @media (min-width: 700px) { .download-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .download-grid { grid-template-columns: repeat(3, 1fr); } }
 
     .download-card {
       background: var(--warm-white);
       border: 1px solid rgba(26, 26, 31, 0.08);
       border-radius: var(--r-lg);
-      padding: var(--sp-6);
+      padding: var(--sp-4);
       display: flex;
       flex-direction: column;
-      gap: var(--sp-3);
+      gap: var(--sp-2);
       cursor: pointer;
       text-align: left;
       transition: border-color var(--t-fast) var(--ease-out),
@@ -77,7 +78,7 @@
       transform: translateY(-2px);
     }
     .download-icon {
-      width: 40px; height: 40px;
+      width: 32px; height: 32px;
       display: inline-flex; align-items: center; justify-content: center;
       background: var(--light-sky);
       color: var(--royal-blue);
@@ -131,7 +132,7 @@
       <div class="form-group">
         <div class="form-group-head">
           <h3>Weddings</h3>
-          <span class="form-group-meta">3 documents</span>
+          <span class="form-group-meta">4 documents</span>
         </div>
         <div class="download-grid">
 
@@ -162,6 +163,15 @@
             <span class="download-meta">PDF · 2026 edition</span>
           </button>
 
+          <button type="button" class="download-card" data-doc="/assets/forms/Photobooth%20Form.pdf" data-doc-name="Photo Booth Form">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h4>Photo booth form</h4>
+            <p>Custom logo, backdrop choice, props, and print template. Everything we need to set up your booth.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
         </div>
       </div>
 
@@ -169,7 +179,7 @@
       <div class="form-group">
         <div class="form-group-head">
           <h3>Sweet 16</h3>
-          <span class="form-group-meta">2 documents</span>
+          <span class="form-group-meta">4 documents</span>
         </div>
         <div class="download-grid">
 
@@ -191,6 +201,24 @@
             <span class="download-meta">PDF</span>
           </button>
 
+          <button type="button" class="download-card" data-doc="/assets/forms/Sweet%2016%20-%20Candle%20Suggestions.pdf" data-doc-name="Sweet 16 Candle Suggestions">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Candle suggestions</h4>
+            <p>Song ideas for every candle, pulled from the ones that land best. Start here if you're stuck.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
+          <button type="button" class="download-card" data-doc="/assets/forms/Photobooth%20Form.pdf" data-doc-name="Photo Booth Form">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h4>Photo booth form</h4>
+            <p>Custom logo, backdrop choice, props, and print template. Everything we need to set up your booth.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
         </div>
       </div>
 
@@ -198,7 +226,7 @@
       <div class="form-group">
         <div class="form-group-head">
           <h3>Bar / Bat Mitzvah</h3>
-          <span class="form-group-meta">1 document</span>
+          <span class="form-group-meta">4 documents</span>
         </div>
         <div class="download-grid">
 
@@ -211,6 +239,33 @@
             <span class="download-meta">PDF</span>
           </button>
 
+          <button type="button" class="download-card" data-doc="/assets/forms/Sweet%2016%20-%20Candlelighting%20Form.pdf" data-doc-name="Candlelighting Form">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h4>Candlelighting form</h4>
+            <p>Each candle, who lights it, and the song that plays. Fill out and bring to your final meeting.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
+          <button type="button" class="download-card" data-doc="/assets/forms/Sweet%2016%20-%20Candle%20Suggestions.pdf" data-doc-name="Candle Suggestions">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4>Candle suggestions</h4>
+            <p>Song ideas for every candle, pulled from the ones that land best. Start here if you're stuck.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
+          <button type="button" class="download-card" data-doc="/assets/forms/Photobooth%20Form.pdf" data-doc-name="Photo Booth Form">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h4>Photo booth form</h4>
+            <p>Custom logo, backdrop choice, props, and print template. Everything we need to set up your booth.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
         </div>
       </div>
 
@@ -218,7 +273,7 @@
       <div class="form-group">
         <div class="form-group-head">
           <h3>Other events</h3>
-          <span class="form-group-meta">2 documents</span>
+          <span class="form-group-meta">3 documents</span>
         </div>
         <div class="download-grid">
 
@@ -237,6 +292,15 @@
             </div>
             <h4>Christening form</h4>
             <p>Reception planning for baptism and christening parties. Music selections, blessings, and family moments.</p>
+            <span class="download-meta">PDF</span>
+          </button>
+
+          <button type="button" class="download-card" data-doc="/assets/forms/Photobooth%20Form.pdf" data-doc-name="Photo Booth Form">
+            <div class="download-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h4>Photo booth form</h4>
+            <p>Custom logo, backdrop choice, props, and print template. Everything we need to set up your booth.</p>
             <span class="download-meta">PDF</span>
           </button>
 
@@ -285,7 +349,7 @@
       <div class="form-group">
         <div class="form-group-head">
           <h3>Add-ons</h3>
-          <span class="form-group-meta">3 documents</span>
+          <span class="form-group-meta">2 documents</span>
         </div>
         <div class="download-grid">
 
@@ -295,15 +359,6 @@
             </div>
             <h4>Photo montage form</h4>
             <p>For the 50-photo custom montage. Pick your songs, send your photos, we cut the rest.</p>
-            <span class="download-meta">PDF</span>
-          </button>
-
-          <button type="button" class="download-card" data-doc="/assets/forms/Photobooth%20Form.pdf" data-doc-name="Photo Booth Form">
-            <div class="download-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            </div>
-            <h4>Photo booth form</h4>
-            <p>Custom logo, backdrop choice, props, and print template. Everything we need to set up your booth.</p>
             <span class="download-meta">PDF</span>
           </button>
 

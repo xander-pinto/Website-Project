@@ -24,6 +24,22 @@
   [headers.values]
     X-Robots-Tag = "noindex"
 
+# Retired services: send old URLs to the services page.
+[[redirects]]
+  from = "/service/sax-violin-duo/*"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/service/multi-instrumentalist/*"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/service/front-board-screen/*"
+  to = "/services.html"
+  status = 301
+
 # The old Wix site had a packages brochure at /brochure; printed matter and
 # old links still point there. Send them to the packages page.
 [[redirects]]
