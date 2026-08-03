@@ -1867,7 +1867,6 @@ p {
   gap: var(--sp-6);
   align-items: center;
   justify-content: center;
-  opacity: 0.75;
   font-family: var(--font-serif);
   font-style: italic;
   color: var(--text-on-dark-soft);
@@ -1876,6 +1875,34 @@ p {
 .awards-row span {
   font-size: var(--fs-sm);
   letter-spacing: 0.04em;
+}
+
+.awards-row > span {
+  opacity: 0.75;
+}
+
+.award-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.award-badge:hover {
+  transform: translateY(-2px);
+}
+
+.award-badge img {
+  height: 88px;
+  width: auto;
+  display: block;
+}
+
+.award-badge span {
+  opacity: 0.75;
 }
 
 
