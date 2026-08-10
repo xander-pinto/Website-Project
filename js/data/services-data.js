@@ -133,10 +133,12 @@ window.SERVICES_DATA = [
     ],
     demo: null,
     gallery: [
+      '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_action.jpg',
       '/assets/images/team/live-musicians/curtis/curtis_playing.jpg',
       '/assets/images/team/live-musicians/curtis/curtis_happy.jpg',
       '/assets/images/team/live-musicians/mark/mark_action.jpg',
       '/assets/images/team/live-musicians/curtis/curtis_tie.jpg',
+      '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_alt.jpg',
     ],
   },
   {
