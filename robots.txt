@@ -1,4 +1,33 @@
 User-agent: *
 Allow: /
 
+# Heavy SEO/marketing crawlers: no value to us, real bandwidth cost.
+# Search engines (Google, Bing, DuckDuckGo, Apple) and AI assistants stay allowed.
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
 Sitemap: https://tommystunes.com/sitemap.xml
