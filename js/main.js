@@ -457,6 +457,28 @@ function renderShowcaseCalendar() {
       <div class="showcase-past-type">${ev.type}</div>
     </div>
   `).join('');
+
+  // Show the first 6 past cards; the rest sit behind a See more toggle.
+  const PAST_VISIBLE = 6;
+  const pastCards = Array.from(pastContainer.children);
+  if (pastCards.length > PAST_VISIBLE) {
+    pastCards.slice(PAST_VISIBLE).forEach((card) => { card.hidden = true; });
+    const wrap = document.createElement('div');
+    wrap.className = 'text-center';
+    wrap.style.marginTop = 'var(--sp-6)';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-secondary';
+    btn.textContent = `See all ${pastCards.length}`;
+    let expanded = false;
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      pastCards.slice(PAST_VISIBLE).forEach((card) => { card.hidden = !expanded; });
+      btn.textContent = expanded ? 'See less' : `See all ${pastCards.length}`;
+    });
+    wrap.appendChild(btn);
+    pastContainer.insertAdjacentElement('afterend', wrap);
+  }
 }
 
 

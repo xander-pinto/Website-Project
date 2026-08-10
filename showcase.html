@@ -221,6 +221,34 @@
       color: var(--electric-cyan);
       opacity: 0.65;
     }
+
+    /* Full-galleries CTA: tilted snapshots flanking the button, photo-reel style */
+    .gallery-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-5);
+      flex-wrap: wrap;
+    }
+
+    .gallery-cta-snap {
+      width: 116px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 3px solid var(--warm-white);
+      box-shadow: 0 8px 22px rgba(0, 0, 5, 0.4);
+    }
+
+    .gallery-cta-snap.tilt-a { transform: rotate(-7deg) translateY(5px); }
+    .gallery-cta-snap.tilt-b { transform: rotate(4deg) translateY(-5px); }
+    .gallery-cta-snap.tilt-c { transform: rotate(-4deg) translateY(-4px); }
+    .gallery-cta-snap.tilt-d { transform: rotate(7deg) translateY(6px); }
+
+    @media (max-width: 700px) {
+      .gallery-cta-snap.tilt-b,
+      .gallery-cta-snap.tilt-c { display: none; }
+    }
   </style>
 </head>
 
@@ -462,11 +490,15 @@
         <p>We post full galleries from real Tommy's Tunes nights to SmugMug. Hundreds of photos per event, organized by
           occasion.</p>
       </div>
-      <div class="text-center">
+      <div class="gallery-cta">
+        <img class="gallery-cta-snap tilt-a" src="/assets/images/services/events/weddings/weddings_pf.jpg" alt="" loading="lazy" aria-hidden="true">
+        <img class="gallery-cta-snap tilt-b" src="/assets/images/services/events/sweet-16-quinces/sweet_16_quinces_pf.jpg" alt="" loading="lazy" aria-hidden="true">
         <!-- EDIT: SmugMug gallery link. -->
         <a class="btn btn-primary" href="https://tommystunes.smugmug.com/Venue-Photos" target="_blank"
           rel="noopener">Open the
           SmugMug gallery</a>
+        <img class="gallery-cta-snap tilt-c" src="/assets/images/services/events/mitzvahs/mitzvahs_pf.jpg" alt="" loading="lazy" aria-hidden="true">
+        <img class="gallery-cta-snap tilt-d" src="/assets/images/services/events/other-events/other_events_pf.jpg" alt="" loading="lazy" aria-hidden="true">
       </div>
     </div>
   </section>

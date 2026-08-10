@@ -1932,9 +1932,7 @@ p {
 }
 
 .award-badge span {
-  color: var(--warm-white);
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  opacity: 0.75;
 }
 
 /* Award wall: rows of small year badges per platform */
@@ -1977,9 +1975,9 @@ p {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: var(--fs-sm);
-  letter-spacing: 0.06em;
-  color: var(--warm-white);
-  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-on-dark-soft);
+  opacity: 0.75;
 }
 
 /* Awards wall on a light section (home page, above reviews) */
@@ -2016,10 +2014,7 @@ p {
 }
 
 .award-chip span {
-  color: var(--warm-white);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  opacity: 1;
+  opacity: 0.75;
 }
 
 
