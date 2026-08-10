@@ -545,13 +545,20 @@ p {
   text-decoration: underline;
 }
 
-/* Homepage upcoming-showcases preview (light variant, horizontal rows) */
+/* Homepage upcoming-showcases preview (light variant, up to 3 compact cards side by side) */
 .showcase-preview-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--sp-4);
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .showcase-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
 }
 
 .showcase-event-card--light {
@@ -563,22 +570,14 @@ p {
 }
 
 .showcase-event-card--row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-4);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
 }
 
-@media (min-width: 700px) {
-  .showcase-event-card--row {
-    grid-template-columns: minmax(180px, 0.4fr) 1fr;
-    gap: var(--sp-6);
-    padding: var(--sp-6) var(--sp-7);
-  }
-  .showcase-event-row-date {
-    border-right: 1px solid rgba(11, 94, 222, 0.12);
-    padding-right: var(--sp-6);
-  }
+.showcase-event-row-date {
+  border-bottom: 1px solid rgba(11, 94, 222, 0.12);
+  padding-bottom: var(--sp-3);
 }
 
 .showcase-event-card--light .showcase-event-date {
@@ -687,6 +686,37 @@ p {
   border-top: 1px solid rgba(11, 94, 222, 0.1);
   padding-top: var(--sp-3);
   margin-top: auto;
+}
+
+/* Homepage reviews: long quotes clamp to a few lines with a See more toggle */
+.reviews-clamped .review-quote {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reviews-clamped .review-card.is-expanded .review-quote {
+  display: block;
+  -webkit-line-clamp: none;
+  overflow: visible;
+}
+
+.review-more {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: var(--sp-2) 0 0;
+  cursor: pointer;
+  align-self: flex-start;
+  color: var(--royal-blue);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.review-more:hover {
+  text-decoration: underline;
 }
 
 .review-byline strong {

@@ -563,4 +563,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderShowcaseHomePreview();
   shuffleShowcase();
   renderVenueMarquee();
+  setupReviewClamps();
 });
+
+
+/* --- Homepage featured reviews: clamp long quotes, add a See more toggle.
+   Only runs inside .reviews-clamped so the full /reviews page is untouched. --- */
+function setupReviewClamps() {
+  document.querySelectorAll('.reviews-clamped .review-card').forEach((card) => {
+    const quote = card.querySelector('.review-quote');
+    if (!quote || quote.scrollHeight <= quote.clientHeight + 2) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'review-more';
+    btn.textContent = 'See more';
+    btn.addEventListener('click', () => {
+      const open = card.classList.toggle('is-expanded');
+      btn.textContent = open ? 'See less' : 'See more';
+    });
+    quote.insertAdjacentElement('afterend', btn);
+  });
+}
