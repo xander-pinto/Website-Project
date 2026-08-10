@@ -163,18 +163,6 @@ window.TEAM_DATA = [
     demo: null,
     gallery: [],
   },
-  {
-    slug: 'waldo',
-    name: 'Waldo',
-    role: 'MC',
-    photo: '/assets/images/team/mcs/waldo/Waldo_pf.JPG',
-    bio: 'An MC on the Tommy\'s Tunes roster, ready to keep your night running and your floor moving.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/EK4xgmKp4mE', caption: 'On the mic, announcing.' },
-    ],
-    gallery: [],
-  },
 
   /* ---------------------------- DJs ---------------------------- */
   {
@@ -322,14 +310,17 @@ window.TEAM_DATA = [
     slug: 'mark-s',
     name: 'Mark S.',
     role: 'Saxophonist',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_pf.jpg',
     bio: 'A high-energy saxophone player and a genuinely nice guy. Mark brings real enthusiasm to a set and has a strong presence on social media.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/4T8rrU7YS7c', caption: 'Playing right in the crowd.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/o_mNTcEVXoQ', caption: 'On the saxophone.' },
     ],
-    gallery: [],
+    gallery: [
+      '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_action.jpg',
+      '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_alt.jpg',
+    ],
   },
   {
     slug: 'curtis',
@@ -393,7 +384,7 @@ window.TEAM_DATA = [
     slug: 'joe-i',
     name: 'Joe I.',
     role: 'Percussionist',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/live-musicians/joe-i/joe_i_headshot.jpg',
     bio: 'Joe is a percussionist who plays with serious energy and even more polish. Put him behind the drums at a reception and the live element hits different. He\'s done countless events, and the experience shows every time.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -449,23 +440,11 @@ window.TEAM_DATA = [
     slug: 'scott',
     name: 'Scott',
     role: 'Pianist',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/live-musicians/scott/scott_pf.jpg',
     bio: 'A pianist on the Tommy\'s Tunes roster, a graceful fit for ceremonies, cocktail hours, and dinner sets.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/pEnF3ufyOJA', caption: 'On the piano.' },
-    ],
-    gallery: [],
-  },
-  {
-    slug: 'bobby',
-    name: 'Bobby',
-    role: 'Vocalist',
-    photo: '/assets/images/team/empty_image.jpg',
-    bio: 'A vocalist on the Tommy\'s Tunes roster, adding live vocals over the DJ for cocktail hour or the big reception moments.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/63c1xtYiP4c', caption: 'On vocals.' },
     ],
     gallery: [],
   },
@@ -610,7 +589,7 @@ window.TEAM_DATA = [
     slug: 'goose',
     name: 'Goose',
     role: 'Technician',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/technicians/goose/goose_pf.jpg',
     bio: 'Goose is Dan K.\'s son, in college now and working his way toward photography of his own. He\'s a genuinely nice guy who gives everything his full effort and takes pride in doing the job right. The kind of person you\'re glad to have on the crew.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,

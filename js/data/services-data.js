@@ -230,7 +230,9 @@ window.SERVICES_DATA = [
     shortDesc: 'Classical strings for ceremony or formal cocktail hour.',
     photo: '/assets/images/services/live-music/string-quartet/string_duo_trio_quartet_pf.jpg',
     longBody: 'Classical strings for the ceremony or a more formal cocktail hour, the most traditional live sound we offer. Book it as a duo, a trio, or a full quartet depending on the room and the budget. Popular pairings include a guitar and cello duo for something warm and intimate, or a guitar, cello, and violin trio when you want a fuller sound carrying down the aisle.',
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/MUqtXqlYR7o', caption: 'Contemporary pop, played on strings.' },
+    ],
     gallery: [
       '/assets/images/services/live-music/string-quartet/cortet_action.jpg',
     ],

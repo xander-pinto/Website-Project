@@ -40,6 +40,22 @@
   to = "/services.html"
   status = 301
 
+# Team members no longer on the roster: send their old pages to the team page.
+[[redirects]]
+  from = "/person/victor/*"
+  to = "/team.html"
+  status = 301
+
+[[redirects]]
+  from = "/person/waldo/*"
+  to = "/team.html"
+  status = 301
+
+[[redirects]]
+  from = "/person/bobby/*"
+  to = "/team.html"
+  status = 301
+
 # The old Wix site had a packages brochure at /brochure; printed matter and
 # old links still point there. Send them to the packages page.
 [[redirects]]
