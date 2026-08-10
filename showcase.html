@@ -81,19 +81,20 @@
     }
 
     .showcase-event-card {
-      background: rgba(5, 13, 60, 0.5);
-      border: 1px solid rgba(49, 170, 239, 0.2);
+      background: var(--warm-white);
+      border: 1px solid rgba(11, 94, 222, 0.15);
       border-radius: var(--r-lg);
       padding: var(--sp-6);
       display: flex;
       flex-direction: column;
+      box-shadow: 0 2px 24px rgba(5, 13, 60, 0.04);
     }
 
     .showcase-event-date {
       font-family: var(--font-serif);
       font-style: italic;
       font-size: var(--fs-xl);
-      color: var(--electric-cyan);
+      color: var(--royal-blue);
       margin-bottom: var(--sp-2);
       line-height: 1.2;
     }
@@ -101,7 +102,7 @@
     .showcase-event-venue {
       font-size: var(--fs-md);
       font-weight: 600;
-      color: var(--warm-white);
+      color: var(--charcoal);
       margin-bottom: var(--sp-1);
     }
 
@@ -109,21 +110,21 @@
       font-size: var(--fs-xs);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--electric-cyan);
+      color: var(--royal-blue);
       opacity: 0.7;
       margin-bottom: var(--sp-3);
     }
 
     .showcase-event-time {
       font-size: var(--fs-sm);
-      color: var(--periwinkle);
+      color: var(--text-on-light-soft);
       margin-bottom: var(--sp-3);
       letter-spacing: 0.02em;
     }
 
     .showcase-event-note {
       font-size: var(--fs-sm);
-      color: var(--periwinkle);
+      color: var(--text-on-light-soft);
       margin: 0;
       line-height: 1.6;
     }
@@ -137,17 +138,17 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--electric-cyan);
+      color: var(--royal-blue);
       text-decoration: none;
-      border: 1px solid rgba(49, 170, 239, 0.4);
+      border: 1px solid rgba(11, 94, 222, 0.4);
       border-radius: var(--r-pill);
       transition: background var(--t-fast) var(--ease-out),
                   border-color var(--t-fast) var(--ease-out);
     }
 
     .showcase-event-tickets:hover {
-      background: rgba(49, 170, 239, 0.1);
-      border-color: var(--electric-cyan);
+      background: rgba(11, 94, 222, 0.08);
+      border-color: var(--royal-blue);
     }
 
     /* Past showcases — compact card, dimmed treatment, sorted newest-first */
@@ -457,7 +458,7 @@
        Events are managed in /js/data/showcases-data.js.
        Empty array shows a "coming soon" fallback card.
        Past events automatically render into the section below. -->
-  <section class="section section-dark" id="showcase-calendar-section">
+  <section class="section section-tinted" id="showcase-calendar-section">
     <div class="container">
       <div class="section-head">
         <span class="overline">See us live</span>

@@ -418,7 +418,7 @@ function renderShowcaseCalendar() {
       <div class="showcase-event-card" style="grid-column: 1 / -1; text-align: center;">
         <div class="showcase-event-type" style="margin-bottom: var(--sp-2);">Coming soon</div>
         <div class="showcase-event-venue" style="margin-bottom: var(--sp-3);">Next showcase dates to be announced</div>
-        <p class="showcase-event-note">Call <a href="tel:6317325886" style="color: var(--electric-cyan); text-decoration: none;">631-732-5886</a> to ask about upcoming dates, or <a href="#" data-open-modal="true" style="color: var(--electric-cyan); text-decoration: none;">drop us a line</a> and we'll let you know when the next one's on the calendar.</p>
+        <p class="showcase-event-note">Call <a href="tel:6317325886" style="color: var(--royal-blue); text-decoration: none;">631-732-5886</a> to ask about upcoming dates, or <a href="#" data-open-modal="true" style="color: var(--royal-blue); text-decoration: none;">drop us a line</a> and we'll let you know when the next one's on the calendar.</p>
       </div>
     `;
   } else {
