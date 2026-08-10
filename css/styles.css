@@ -1907,6 +1907,78 @@ p {
   letter-spacing: 0.06em;
 }
 
+/* Award wall: rows of small year badges per platform */
+.awards-wall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.award-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.award-group:hover {
+  transform: translateY(-2px);
+}
+
+.award-minis {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  max-width: 1060px;
+}
+
+.award-minis img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.award-caption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.06em;
+  color: var(--warm-white);
+  font-weight: 600;
+}
+
+/* Compact one-line awards strip (all pages except home) */
+.award-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.award-chip:hover {
+  transform: translateY(-2px);
+}
+
+.award-chip img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.award-chip span {
+  color: var(--warm-white);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 1;
+}
+
 
 /* --- 22. Service list (services & packages pages) --- */
 
