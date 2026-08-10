@@ -1952,6 +1952,19 @@ p {
   font-weight: 600;
 }
 
+/* Awards wall on a light section (home page, above reviews) */
+.awards-home .awards {
+  padding: 0;
+  border-top: none;
+}
+
+.awards-home .award-caption,
+.awards-home .awards-row,
+.awards-home .award-badge span,
+.awards-home .awards-row > span {
+  color: var(--text-on-light);
+}
+
 /* Compact one-line awards strip (all pages except home) */
 .award-chip {
   display: flex;
