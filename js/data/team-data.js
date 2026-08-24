@@ -119,18 +119,6 @@ window.TEAM_DATA = [
     gallery: [],
   },
   {
-    slug: 'zach',
-    name: 'Zach',
-    role: 'MC',
-    photo: '/assets/images/team/mcs/zach/zach_pf.avif',
-    bio: 'One of the youngest on the roster and one of the most reliable. Zach is confident on the mic and almost obsessive about the timeline, the kind of guy who cares more than anyone else in the room about getting your night right. Smart, professional, and someone you can count on.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/JJzcTUVoZWY', caption: 'Hosting a Sweet 16.' },
-    ],
-    gallery: [],
-  },
-  {
     slug: 'max',
     name: 'Max',
     role: 'MC',
@@ -281,16 +269,6 @@ window.TEAM_DATA = [
       '/assets/images/team/djs/johnny-munroe/packed_floor_with_johnny.jpg',
     ],
   },
-  {
-    slug: 'matt',
-    name: 'Matt',
-    role: 'DJ',
-    photo: '/assets/images/team/empty_image.jpg',
-    bio: 'Matt is one of the younger DJs on the roster, but he\'s got real time behind the decks. High energy, clean mixing, and an easy guy to have at your event. He knows how to keep a floor moving.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
-    gallery: [],
-  },
   /* ----------------------- Live musicians ----------------------- */
   {
     slug: 'mark',
@@ -357,7 +335,7 @@ window.TEAM_DATA = [
     slug: 'marino',
     name: 'Marino',
     role: 'Saxophonist',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/live-musicians/marino/marino_pf.jpg',
     bio: 'A saxophone player on the Tommy\'s Tunes roster, bringing a live horn to cocktail hour and reception sets.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -384,7 +362,7 @@ window.TEAM_DATA = [
     slug: 'joe-i',
     name: 'Joe I.',
     role: 'Percussionist',
-    photo: '/assets/images/team/live-musicians/joe-i/joe_i_headshot.jpg',
+    photo: '/assets/images/team/live-musicians/joe-i/joei_cooking.jpg',
     bio: 'Joe is a percussionist who plays with serious energy and even more polish. Put him behind the drums at a reception and the live element hits different. He\'s done countless events, and the experience shows every time.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -394,14 +372,14 @@ window.TEAM_DATA = [
     ],
     gallery: [
       '/assets/images/team/live-musicians/joe-i/joei_in_action.jpg',
-      '/assets/images/team/live-musicians/joe-i/joei_cooking.jpg',
+      '/assets/images/team/live-musicians/joe-i/joe_i_headshot.jpg',
     ],
   },
   {
     slug: 'will',
     name: 'Will',
     role: 'Percussionist',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/live-musicians/will/will_drumming.jpg',
     bio: 'Will is one of the younger percussionists on the roster, and a percussion teacher when he\'s not playing events. He\'s got the skill and the ear, he cares about every set, and he keeps getting better. A genuinely nice guy who brings real live energy to the floor.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -601,6 +579,28 @@ window.TEAM_DATA = [
     role: 'Technician',
     photo: '/assets/images/team/technicians/jesse/jesse_pf.jpg',
     bio: 'Jesse is a newer face on the crew, studying music in college and seriously gifted at it. He\'s one of the kindest people you\'ll meet, the kind of guy you instantly know you can rely on. Dependable, easygoing, and a real pleasure to have on the team.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demo: null,
+    gallery: [],
+  },
+  {
+    slug: 'zach',
+    name: 'Zach',
+    role: 'Technician',
+    photo: '/assets/images/team/technicians/zach/zach_pf.avif',
+    bio: 'One of the youngest on the roster and one of the most reliable. Zach is almost obsessive about getting the details right, the kind of guy who cares more than anyone else in the room about your night going smoothly. Smart, professional, and someone you can count on. He\'s comfortable on a mic too, when the night calls for it.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/JJzcTUVoZWY', caption: 'Hosting a Sweet 16.' },
+    ],
+    gallery: [],
+  },
+  {
+    slug: 'matt-a',
+    name: 'Matt A.',
+    role: 'Technician',
+    photo: '/assets/images/team/empty_image.jpg',
+    bio: 'Matt A. is part of the technician crew, handling the load-ins, setups, and gear that make an event run clean from the first guest to the last song.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
