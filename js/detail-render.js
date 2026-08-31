@@ -281,6 +281,10 @@
     setText('[data-slot="name"]', record.name);
     setText('[data-slot="role"]', record.shortDesc || '');
     setBackground('[data-slot="hero-photo"]', record.photo);
+    // Optional per-service framing tweak, e.g. photoStyle: 'background-position: center 12%;'
+    if (record.photoStyle) {
+      document.querySelectorAll('[data-slot="hero-photo"]').forEach((el) => { el.style.cssText += record.photoStyle; });
+    }
     setHTML('[data-slot="bio"]', record.longBody || record.shortDesc || '');
     if (record.included && record.included.length) {
       const html = record.included.map((item) => `<li>${escapeHTML(item)}</li>`).join('');
