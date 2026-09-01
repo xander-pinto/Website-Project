@@ -551,6 +551,172 @@ function renderShowcaseHomePreview() {
 /* --- "How did you hear about us?" → reveal a text field when "Other" is picked.
    Delegated on document so it works for the modal (loaded async) and the
    inline contact-page form alike. --- */
+/* --- "Check your date" modal: optional appointment request. Checking the box
+   reveals a location choice; picking a location renders a mini calendar of the
+   next 8 weeks limited to that location's open days. Clicking a day shows
+   one-hour slots inside its real hours; tapped slots collect into the hidden
+   appointment_times field (and a visible summary). Nothing here promises real
+   availability — a rep confirms every request by phone. --- */
+const APPT_HOURS = {
+  // weekday (0=Sun) -> [open hour, close hour) in 24h; null = closed
+  'Selden showroom': { 0: null, 1: [10, 20], 2: [10, 20], 3: [10, 20], 4: [10, 20], 5: [10, 17], 6: [9, 17] },
+  'Melville office': { 0: null, 1: [12, 20], 2: [12, 20], 3: [12, 20], 4: [12, 20], 5: null, 6: [11, 15] },
+};
+const APPT_WEEKS_AHEAD = 8;
+
+function apptFmtHour(h) {
+  const ampm = h < 12 ? 'am' : 'pm';
+  const hr = h % 12 === 0 ? 12 : h % 12;
+  return hr + ':00' + ampm;
+}
+
+function setupAppointmentToggle() {
+  const state = { location: null, month: null, day: null, picks: new Map() };
+
+  const $ = (sel) => document.querySelector('[data-appointment-fields] ' + sel)
+    || document.querySelector(sel);
+
+  function els() {
+    const wrap = document.querySelector('[data-appointment-fields]');
+    if (!wrap) return null;
+    return {
+      wrap,
+      calWrap: wrap.querySelector('[data-appt-calendar-wrap]'),
+      cal: wrap.querySelector('[data-appt-calendar]'),
+      slots: wrap.querySelector('[data-appt-slots]'),
+      selected: wrap.querySelector('[data-appt-selected]'),
+      input: wrap.querySelector('[data-appt-times-input]'),
+    };
+  }
+
+  function dayKey(d) { return d.toISOString().slice(0, 10); }
+
+  function isOpenDay(d) {
+    const hours = APPT_HOURS[state.location];
+    if (!hours || !hours[d.getDay()]) return false;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const limit = new Date(today); limit.setDate(limit.getDate() + APPT_WEEKS_AHEAD * 7);
+    return d > today && d <= limit;
+  }
+
+  function renderCalendar() {
+    const e = els(); if (!e) return;
+    const y = state.month.getFullYear(), mo = state.month.getMonth();
+    const monthName = state.month.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    const first = new Date(y, mo, 1);
+    const daysInMonth = new Date(y, mo + 1, 0).getDate();
+
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const canPrev = new Date(y, mo, 1) > new Date(today.getFullYear(), today.getMonth(), 1);
+    const lastAllowed = new Date(today); lastAllowed.setDate(lastAllowed.getDate() + APPT_WEEKS_AHEAD * 7);
+    const canNext = new Date(y, mo + 1, 1) <= lastAllowed;
+
+    let html = '<div class="appt-cal-head">'
+      + '<button type="button" class="appt-cal-nav" data-cal-prev ' + (canPrev ? '' : 'disabled') + ' aria-label="Previous month">&larr;</button>'
+      + '<span>' + monthName + '</span>'
+      + '<button type="button" class="appt-cal-nav" data-cal-next ' + (canNext ? '' : 'disabled') + ' aria-label="Next month">&rarr;</button>'
+      + '</div><div class="appt-cal-grid">';
+    ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((d) => { html += '<span class="appt-cal-dow">' + d + '</span>'; });
+    for (let i = 0; i < first.getDay(); i++) html += '<span></span>';
+    for (let day = 1; day <= daysInMonth; day++) {
+      const d = new Date(y, mo, day);
+      const key = dayKey(d);
+      const open = isOpenDay(d);
+      const has = state.picks.has(key) && state.picks.get(key).size > 0;
+      const sel = state.day === key;
+      html += '<button type="button" class="appt-cal-day' + (sel ? ' is-active' : '') + (has ? ' has-picks' : '') + '"'
+        + ' data-cal-day="' + key + '"' + (open ? '' : ' disabled') + '>' + day + '</button>';
+    }
+    html += '</div>';
+    e.cal.innerHTML = html;
+  }
+
+  function renderSlots() {
+    const e = els(); if (!e) return;
+    if (!state.day) { e.slots.hidden = true; return; }
+    const d = new Date(state.day + 'T12:00:00');
+    const range = APPT_HOURS[state.location][d.getDay()];
+    if (!range) { e.slots.hidden = true; return; }
+    const picked = state.picks.get(state.day) || new Set();
+    const label = d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    let html = '<div class="appt-slots-label">' + label + ' &middot; tap all times that work</div><div class="appt-slots-row">';
+    for (let h = range[0]; h < range[1]; h++) {
+      const slot = apptFmtHour(h) + '\u2013' + apptFmtHour(h + 1);
+      html += '<button type="button" class="appt-slot' + (picked.has(slot) ? ' is-picked' : '') + '" data-slot="' + slot + '">' + slot + '</button>';
+    }
+    html += '</div>';
+    e.slots.innerHTML = html;
+    e.slots.hidden = false;
+  }
+
+  function syncOutput() {
+    const e = els(); if (!e) return;
+    const parts = [];
+    [...state.picks.keys()].sort().forEach((key) => {
+      const set = state.picks.get(key);
+      if (!set || !set.size) return;
+      const d = new Date(key + 'T12:00:00');
+      const label = d.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      parts.push(label + ': ' + [...set].join(', '));
+    });
+    e.input.value = parts.join(' | ');
+    e.selected.hidden = parts.length === 0;
+    e.selected.innerHTML = parts.length
+      ? '<strong>Your appointment:</strong> ' + parts.join(' &middot; ')
+      : '';
+  }
+
+  function reset(full) {
+    state.day = null; state.picks = new Map();
+    state.month = new Date(); state.month.setDate(1);
+    const e = els(); if (!e) return;
+    e.slots.hidden = true; e.selected.hidden = true; e.input.value = '';
+    if (full) {
+      state.location = null;
+      e.calWrap.hidden = true;
+      e.wrap.querySelectorAll('input[name="appointment_location"]').forEach((r) => { r.checked = false; });
+    }
+  }
+
+  document.addEventListener('change', (evt) => {
+    const t = evt.target;
+    if (t.matches && t.matches('input[name="appointment_requested"]')) {
+      const e = els(); if (!e) return;
+      e.wrap.hidden = !t.checked;
+      e.wrap.querySelectorAll('input[name="appointment_location"]').forEach((r) => { r.required = t.checked; });
+      if (!t.checked) reset(true);
+    }
+    if (t.matches && t.matches('input[name="appointment_location"]')) {
+      state.location = t.value;
+      reset(false);
+      const e = els(); if (!e) return;
+      e.calWrap.hidden = false;
+      renderCalendar();
+    }
+  });
+
+  document.addEventListener('click', (evt) => {
+    const prev = evt.target.closest && evt.target.closest('[data-cal-prev]');
+    const next = evt.target.closest && evt.target.closest('[data-cal-next]');
+    const dayBtn = evt.target.closest && evt.target.closest('[data-cal-day]');
+    const slotBtn = evt.target.closest && evt.target.closest('.appt-slot');
+    if (prev && !prev.disabled) { state.month.setMonth(state.month.getMonth() - 1); renderCalendar(); }
+    if (next && !next.disabled) { state.month.setMonth(state.month.getMonth() + 1); renderCalendar(); }
+    if (dayBtn && !dayBtn.disabled) { state.day = dayBtn.dataset.calDay; renderCalendar(); renderSlots(); }
+    if (slotBtn) {
+      const slot = slotBtn.dataset.slot;
+      const current = state.picks.get(state.day);
+      if (current && current.has(slot)) {
+        state.picks = new Map(); // tap again to unbook
+      } else {
+        state.picks = new Map([[state.day, new Set([slot])]]); // one appointment, one slot
+      }
+      renderSlots(); renderCalendar(); syncOutput();
+    }
+  });
+}
+
+
 function setupReferralOther() {
   document.addEventListener('change', (e) => {
     const select = e.target;
@@ -579,6 +745,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupDocPreview();
   setupFooterYear();
   setupReferralOther();
+  setupAppointmentToggle();
   renderFeaturedTalent();
   renderTestimonial();
   renderShowcaseCalendar();

@@ -90,6 +90,41 @@
         <input type="text" id="cyd-referral-other" name="referral_other" placeholder="Tell us where you heard about us">
       </div>
 
+      <!-- Optional appointment request. Fields reveal when the box is checked
+           (setupAppointmentToggle in main.js). Picking a location shows a mini
+           calendar limited to that location's open days; clicking a day shows
+           one-hour slots. A rep confirms every request by phone. -->
+      <div class="field">
+        <label class="field-checkbox">
+          <input type="checkbox" id="cyd-appt" name="appointment_requested" value="yes">
+          <span>I'd like to book an appointment</span>
+        </label>
+      </div>
+
+      <div data-appointment-fields hidden>
+        <div class="field">
+          <label>Which location?</label>
+          <label class="field-checkbox">
+            <input type="radio" name="appointment_location" value="Selden showroom">
+            <span>Selden showroom &middot; Mon&ndash;Thu 10am&ndash;8pm, Fri 10am&ndash;5pm, Sat 9am&ndash;5pm</span>
+          </label>
+          <label class="field-checkbox">
+            <input type="radio" name="appointment_location" value="Melville office">
+            <span>Melville office &middot; Mon&ndash;Thu 12pm&ndash;8pm, Sat 11am&ndash;3pm</span>
+          </label>
+        </div>
+
+        <div class="field" data-appt-calendar-wrap hidden>
+          <label>Pick a day and time</label>
+          <div class="appt-cal" data-appt-calendar></div>
+          <div class="appt-slots" data-appt-slots hidden></div>
+          <p class="appt-selected" data-appt-selected hidden></p>
+          <input type="hidden" name="appointment_times" data-appt-times-input>
+        </div>
+
+        <p class="form-fineprint" style="margin-top: 0;">Sending this form books your appointment. If the time doesn't work on our end, a member of our team will call you to reschedule.</p>
+      </div>
+
       <div class="field">
         <label for="cyd-notes">Anything else?</label>
         <textarea id="cyd-notes" name="notes" placeholder="Guest count, vibe, questions, anything helps."></textarea>

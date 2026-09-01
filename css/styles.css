@@ -440,7 +440,7 @@ p {
 
 .nav-logo-mark {
   width: auto;
-  height: 95px;
+  height: 102px;
   max-width: 380px;
   display: block;
   object-fit: contain;
@@ -493,6 +493,13 @@ p {
 
 .nav-cta {
   margin-left: var(--sp-3);
+}
+
+.nav-phone {
+  font-weight: 650;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
 
 .nav-hiring {
@@ -1166,6 +1173,136 @@ p {
   outline: none;
   border-color: var(--royal-blue);
   box-shadow: 0 0 0 3px rgba(11, 94, 222, 0.15);
+}
+
+.appt-cal {
+  max-width: 320px;
+  margin-top: var(--sp-2);
+  border: 1px solid rgba(11, 94, 222, 0.15);
+  border-radius: 10px;
+  padding: var(--sp-3);
+  background: #fff;
+}
+
+.appt-cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  margin-bottom: var(--sp-2);
+}
+
+.appt-cal-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: var(--fs-base);
+  color: var(--royal-blue);
+  padding: 2px 8px;
+}
+
+.appt-cal-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.appt-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.appt-cal-dow {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-on-light-soft);
+  padding-bottom: 4px;
+}
+
+.appt-cal-day {
+  border: none;
+  background: none;
+  font-size: var(--fs-xs);
+  padding: 7px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-on-light);
+  position: relative;
+}
+
+.appt-cal-day:hover:not(:disabled) {
+  background: rgba(11, 94, 222, 0.08);
+}
+
+.appt-cal-day:disabled {
+  color: rgba(0, 0, 0, 0.22);
+  cursor: default;
+}
+
+.appt-cal-day.is-active {
+  background: var(--royal-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.appt-cal-day.has-picks:not(.is-active)::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+}
+
+.appt-slots {
+  margin-top: var(--sp-3);
+}
+
+.appt-slots-label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-on-light-soft);
+  margin-bottom: var(--sp-2);
+}
+
+.appt-slots-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.appt-slot {
+  border: 1px solid rgba(11, 94, 222, 0.35);
+  background: #fff;
+  color: var(--royal-blue);
+  font-size: var(--fs-xs);
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.appt-slot:hover {
+  background: rgba(11, 94, 222, 0.08);
+}
+
+.appt-slot.is-picked {
+  background: var(--royal-blue);
+  border-color: var(--royal-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.appt-selected {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--text-on-light-soft);
+  line-height: 1.6;
 }
 
 .field-checkbox {
