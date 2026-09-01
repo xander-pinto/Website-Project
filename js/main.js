@@ -571,13 +571,12 @@ function apptFmtHour(h) {
 }
 
 function setupAppointmentToggle() {
-  const state = { location: null, month: null, day: null, picks: new Map() };
-
-  const $ = (sel) => document.querySelector('[data-appointment-fields] ' + sel)
-    || document.querySelector(sel);
+  // One shared state; `state.form` tracks which form (modal or contact page)
+  // the visitor is using, so pages with both never cross wires.
+  const state = { form: null, location: null, month: null, day: null, picks: new Map() };
 
   function els() {
-    const wrap = document.querySelector('[data-appointment-fields]');
+    const wrap = state.form && state.form.querySelector('[data-appointment-fields]');
     if (!wrap) return null;
     return {
       wrap,
@@ -680,6 +679,10 @@ function setupAppointmentToggle() {
 
   document.addEventListener('change', (evt) => {
     const t = evt.target;
+    if (t.matches && (t.matches('input[name="appointment_requested"]') || t.matches('input[name="appointment_location"]'))) {
+      const form = t.closest('form');
+      if (form !== state.form) { state.form = form; }
+    }
     if (t.matches && t.matches('input[name="appointment_requested"]')) {
       const e = els(); if (!e) return;
       e.wrap.hidden = !t.checked;
@@ -696,6 +699,8 @@ function setupAppointmentToggle() {
   });
 
   document.addEventListener('click', (evt) => {
+    const inOurForm = evt.target.closest && evt.target.closest('form') === state.form;
+    if (!inOurForm) return;
     const prev = evt.target.closest && evt.target.closest('[data-cal-prev]');
     const next = evt.target.closest && evt.target.closest('[data-cal-next]');
     const dayBtn = evt.target.closest && evt.target.closest('[data-cal-day]');
