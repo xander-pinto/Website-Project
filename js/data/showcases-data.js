@@ -59,6 +59,15 @@ window.SHOWCASES_DATA = [
     ticketUrl: 'https://longislandbridalexpo.com/longisland-bridal-shows-2/',
   },
   {
+    date: '2026-10-21',
+    dateDisplay: 'October 21, 2026',
+    time: 'Doors open 6:00pm',
+    venue: 'Fox Hollow',
+    type: 'Bridal Showcase',
+    note: 'Fall showcase in Woodbury. Meet the team and talk through your night.',
+    ticketUrl: 'https://foxhollowcatering.ticketspice.com/fall-2026-showcase',
+  },
+  {
     date: '2026-08-19',
     dateDisplay: 'August 19, 2026',
     time: 'Doors at 6:00pm',
