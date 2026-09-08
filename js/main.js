@@ -638,7 +638,7 @@ function setupAppointmentToggle() {
     if (!range) { e.slots.hidden = true; return; }
     const picked = state.picks.get(state.day) || new Set();
     const label = d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-    let html = '<div class="appt-slots-label">' + label + ' &middot; tap all times that work</div><div class="appt-slots-row">';
+    let html = '<div class="appt-slots-label">' + label + ' &middot; pick a time</div><div class="appt-slots-row">';
     for (let h = range[0]; h < range[1]; h++) {
       const slot = apptFmtHour(h) + '\u2013' + apptFmtHour(h + 1);
       html += '<button type="button" class="appt-slot' + (picked.has(slot) ? ' is-picked' : '') + '" data-slot="' + slot + '">' + slot + '</button>';
@@ -722,6 +722,30 @@ function setupAppointmentToggle() {
 }
 
 
+/* --- Appointment requests must carry a day + time. The picker writes into a
+   hidden field, and hidden inputs can't use HTML5 required (browsers refuse to
+   focus them), so validate on submit instead. --- */
+function setupAppointmentValidation() {
+  document.addEventListener('submit', (e) => {
+    const form = e.target;
+    if (!form || !form.querySelector) return;
+    const box = form.querySelector('input[name="appointment_requested"]');
+    if (!box || !box.checked) return;
+    const timeInput = form.querySelector('[data-appt-times-input]');
+    const err = form.querySelector('[data-appt-error]');
+    if (timeInput && !timeInput.value.trim()) {
+      e.preventDefault();
+      if (err) {
+        err.hidden = false;
+        err.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } else if (err) {
+      err.hidden = true;
+    }
+  });
+}
+
+
 function setupReferralOther() {
   document.addEventListener('change', (e) => {
     const select = e.target;
@@ -751,6 +775,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupFooterYear();
   setupReferralOther();
   setupAppointmentToggle();
+  setupAppointmentValidation();
   renderFeaturedTalent();
   renderTestimonial();
   renderShowcaseCalendar();
