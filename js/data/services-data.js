@@ -156,7 +156,7 @@ window.SERVICES_DATA = [
     category: 'Live Music',
     name: 'Jazz guitarist',
     shortDesc: 'Instrumental. Sets a calmer tone for cocktail hour.',
-    photo: '',
+    photo: '/assets/images/services/live-music/jazz-guitarist/jazz_guitarist_pf.jpg',
     longBody: 'Solo instrumental jazz guitar, the most understated live option we offer. It fills a cocktail hour or a seated dinner with real music without raising the volume of the room, so people can still hear each other talk. Pick this when you want live atmosphere, not a performance everyone has to stop and watch.',
     demo: null,
     gallery: [],
@@ -235,6 +235,7 @@ window.SERVICES_DATA = [
     longBody: 'Classical strings for the ceremony or a more formal cocktail hour, the most traditional live sound we offer. Book it as a duo, a trio, or a full quartet depending on the room and the budget. Popular pairings include a guitar and cello duo for something warm and intimate, or a guitar, cello, and violin trio when you want a fuller sound carrying down the aisle.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/MUqtXqlYR7o', caption: 'Contemporary pop, played on strings.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/lH2FvAp2i0w', caption: 'Violin and cello, played as a duo.' },
     ],
     gallery: [
       '/assets/images/services/live-music/string-quartet/cortet_action.jpg',

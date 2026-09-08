@@ -95,6 +95,15 @@ window.SHOWCASES_DATA = [
     ticketUrl: 'https://longislandbridalexpo.com/longisland-bridal-shows-2/',
   },
   {
+    date: '2026-11-08',
+    dateDisplay: 'November 8, 2026',
+    time: '12:00pm – 3:00pm',
+    venue: 'Port Jefferson Country Club',
+    type: 'Bridal Showcase',
+    note: 'Meet the team, see the setups live, and ask anything. Open to all couples.',
+    ticketUrl: 'https://www.portjeffersoncountryclub.com/event-registration',
+  },
+  {
     date: '2026-11-15',
     dateDisplay: 'November 15, 2026',
     time: '6:30pm – 9:00pm',
