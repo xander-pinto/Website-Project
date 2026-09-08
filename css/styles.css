@@ -2918,6 +2918,108 @@ p {
   overflow: hidden;
   border: 1px solid rgba(49, 170, 239, 0.15);
 }
+
+/* TikTok and other vertical embeds keep their own 9:16 shape. */
+.demo-embed.is-portrait {
+  aspect-ratio: 9 / 16;
+  max-width: 325px;
+  margin: 0 auto;
+}
+
+/* --- TikTok section --- */
+.tiktok-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  gap: var(--sp-5);
+  justify-content: center;
+}
+
+.tiktok-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.tiktok-card figcaption {
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--text-on-dark-soft);
+  text-align: center;
+}
+
+.tiktok-follow {
+  margin-top: var(--sp-6);
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+
+.tiktok-follow a {
+  color: var(--accent-glow);
+  font-weight: 600;
+}
+
+/* Poster stands in for TikTok's player until someone presses play. */
+.tiktok-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--near-black);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--t-med) var(--ease-out);
+}
+
+.tiktok-facade::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 5, 0.1) 0%, rgba(0, 0, 5, 0.45) 100%);
+}
+
+.tiktok-facade:hover,
+.tiktok-facade:focus-visible {
+  transform: scale(1.02);
+}
+
+.tiktok-play {
+  position: relative;
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(250, 250, 247, 0.92);
+  color: var(--near-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 5, 0.45);
+}
+
+.tiktok-play svg {
+  width: 26px;
+  height: 26px;
+  margin-left: 3px;
+}
+
+.demo-embed.is-portrait iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tiktok-facade { transition: none; }
+  .tiktok-facade:hover, .tiktok-facade:focus-visible { transform: none; }
+}
 .demo-embed iframe {
   width: 100%;
   height: 100%;

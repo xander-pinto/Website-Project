@@ -135,6 +135,55 @@
     showSection('[data-slot="demo-section"]');
   }
 
+  /* Clips live in one tagged library (tiktok-data.js) rather than being pasted
+     into each record, so a single post can appear on a person's page and a
+     service page at once. `field` is 'people' on person pages, 'services'
+     elsewhere.
+
+     We render our own poster and only build TikTok's iframe when someone
+     clicks. Loading several of their players at once makes them degrade into a
+     "Related videos" panel, and this also keeps TikTok's scripts and cookies
+     off the page for anyone who never presses play. Posters are self-hosted
+     because TikTok's thumbnail URLs are signed and expire within days. */
+  function renderTikToks(record, field) {
+    const all = Array.isArray(window.TIKTOK_DATA) ? window.TIKTOK_DATA : [];
+    const picks = all.filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug));
+    if (!picks.length) {
+      hideSection('[data-slot="tiktok-section"]');
+      return;
+    }
+    const html = picks.map((c) => `
+      <figure class="tiktok-card">
+        <div class="demo-embed is-portrait">
+          <button type="button" class="tiktok-facade" data-tiktok-id="${escapeHTML(c.id)}"
+                  style="background-image:url('/assets/images/tiktok/${escapeHTML(c.id)}.jpg')"
+                  aria-label="Play: ${escapeHTML(c.caption || 'TikTok clip')}">
+            <span class="tiktok-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+        </div>
+        ${c.caption ? `<figcaption>${escapeHTML(c.caption)}</figcaption>` : ''}
+      </figure>
+    `).join('');
+    setHTML('[data-slot="tiktoks"]', html);
+    showSection('[data-slot="tiktok-section"]');
+  }
+
+  // Swap the poster for the real player on click. One at a time, by design.
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('.tiktok-facade');
+    if (!btn) return;
+    const id = btn.getAttribute('data-tiktok-id');
+    if (!id) return;
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.tiktok.com/embed/v2/' + encodeURIComponent(id);
+    frame.title = 'TikTok clip';
+    frame.setAttribute('allow', 'encrypted-media;');
+    frame.setAttribute('allowfullscreen', '');
+    btn.replaceWith(frame);
+  });
+
   function renderReviews(record) {
     const all = Array.isArray(window.TESTIMONIALS_DATA) ? window.TESTIMONIALS_DATA : [];
     const picks = all.filter((r) => Array.isArray(r.slugs) && r.slugs.includes(record.slug));
@@ -269,6 +318,7 @@
     }
     setText('[data-slot="bio"]', record.bio || '');
     renderDemo(record);
+    renderTikToks(record, 'people');
     renderGallery(record.gallery);
     renderReviews(record);
     renderSocials(record.socials);
@@ -294,6 +344,7 @@
       hideSection('[data-slot="included-section"]');
     }
     renderDemo(record);
+    renderTikToks(record, 'services');
     renderGallery(record.gallery);
     renderBackdrops(record.backdrops);
     hideSection('[data-slot="socials-section"]');
@@ -317,6 +368,7 @@
     renderDemo(record);
     renderGallery(record.gallery);
     hideSection('[data-slot="socials-section"]');
+    hideSection('[data-slot="tiktok-section"]');
     buildTOC();
   }
 
