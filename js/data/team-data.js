@@ -388,6 +388,16 @@ window.TEAM_DATA = [
     ],
   },
   {
+    slug: 'drew',
+    name: 'Drew',
+    role: 'Percussionist',
+    photo: '/assets/images/team/live-musicians/drew/drew_pf.jpg',
+    bio: 'A percussionist on the Tommy\'s Tunes roster, adding live drums over the DJ for cocktail hour or the reception.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demo: null,
+    gallery: [],
+  },
+  {
     slug: 'will',
     name: 'Will',
     role: 'Percussionist',
