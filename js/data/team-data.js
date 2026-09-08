@@ -119,6 +119,18 @@ window.TEAM_DATA = [
     gallery: [],
   },
   {
+    slug: 'zach',
+    name: 'Zach',
+    role: 'MC',
+    photo: '/assets/images/team/mcs/zach/zach_pf.avif',
+    bio: 'One of the youngest on the roster and one of the most reliable. Zach is confident on the mic and almost obsessive about the timeline, the kind of guy who cares more than anyone else in the room about getting your night right. Smart, professional, and someone you can count on.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/JJzcTUVoZWY', caption: 'Hosting a Sweet 16.' },
+    ],
+    gallery: [],
+  },
+  {
     slug: 'max',
     name: 'Max',
     role: 'MC',
@@ -593,18 +605,6 @@ window.TEAM_DATA = [
     bio: 'Jesse is a newer face on the crew, studying music in college and seriously gifted at it. He\'s one of the kindest people you\'ll meet, the kind of guy you instantly know you can rely on. Dependable, easygoing, and a real pleasure to have on the team.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
-    gallery: [],
-  },
-  {
-    slug: 'zach',
-    name: 'Zach',
-    role: 'Technician',
-    photo: '/assets/images/team/technicians/zach/zach_pf.avif',
-    bio: 'One of the youngest on the roster and one of the most reliable. Zach is almost obsessive about getting the details right, the kind of guy who cares more than anyone else in the room about your night going smoothly. Smart, professional, and someone you can count on. He\'s comfortable on a mic too, when the night calls for it.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/JJzcTUVoZWY', caption: 'Hosting a Sweet 16.' },
-    ],
     gallery: [],
   },
   {
