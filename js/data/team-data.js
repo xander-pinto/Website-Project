@@ -394,7 +394,9 @@ window.TEAM_DATA = [
     photo: '/assets/images/team/live-musicians/drew/drew_pf.jpg',
     bio: 'A percussionist on the Tommy\'s Tunes roster, adding live drums over the DJ for cocktail hour or the reception.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'video', url: '/assets/images/team/live-musicians/drew/drew_percussion.mp4', caption: 'Live percussion over the DJ set.' },
+    ],
     gallery: [],
   },
   {
