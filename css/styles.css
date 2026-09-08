@@ -1392,6 +1392,45 @@ p {
   margin-top: var(--sp-2);
 }
 
+/* Confirmation panel that replaces the form after a successful submit. Lives on
+   a light surface in both places it appears: the modal panel and the contact card. */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  animation: panelIn var(--t-med) var(--ease-out);
+}
+
+.form-success-mark {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  color: var(--accent);
+  margin-bottom: var(--sp-1);
+}
+
+.form-success p {
+  margin: 0;
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--text-on-light-soft);
+}
+
+.form-success p strong {
+  color: var(--text-on-light);
+  font-weight: 600;
+}
+
+.form-success a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.form-success .btn {
+  margin-top: var(--sp-3);
+}
+
 
 /* --- 11. Hero (homepage) --- */
 

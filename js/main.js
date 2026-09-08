@@ -764,6 +764,101 @@ function setupReferralOther() {
 }
 
 
+/* --- Submit the inquiry form in the background so people stay where they are
+   and get a real confirmation instead of Netlify's default receipt page. Both
+   copies of the form keep action="/thank-you.html" as the no-JS fallback. --- */
+function setupFormSuccess() {
+  document.addEventListener('submit', async (e) => {
+    if (e.defaultPrevented) return; // appointment validation already stopped it
+    const form = e.target;
+    if (!form || !form.getAttribute || form.getAttribute('name') !== 'check-your-date') return;
+
+    e.preventDefault();
+    const data = new FormData(form);
+    const btn = form.querySelector('button[type="submit"]');
+    const label = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString(),
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      showFormSuccess(form, data);
+    } catch (err) {
+      // Never lose a lead to a flaky network. Hand it back to the browser,
+      // which does a normal POST and lands on /thank-you.html.
+      console.error('[form] background submit failed:', err.message);
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+      form.submit();
+    }
+  });
+}
+
+
+function showFormSuccess(form, data) {
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  const firstName = String(data.get('name') || '').trim().split(/\s+/)[0];
+  const eventDate = String(data.get('event_date') || '').trim();
+  const apptTime = String(data.get('appointment_time') || '').trim();
+  const apptPlace = String(data.get('appointment_location') || '').trim();
+
+  const prettyDate = (() => {
+    if (!eventDate) return '';
+    const d = new Date(eventDate + 'T12:00:00');
+    return isNaN(d) ? '' : d.toLocaleDateString('en-US', {
+      weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+    });
+  })();
+
+  const lines = [];
+  lines.push(prettyDate
+    ? `Your request for <strong>${esc(prettyDate)}</strong> is in, and we're checking availability now.`
+    : `Your request is in, and we're looking at it now.`);
+
+  if (apptTime) {
+    lines.push(`We've got you down for <strong>${esc(apptTime)}</strong>` +
+      (apptPlace ? ` at our ${esc(apptPlace)}` : '') +
+      `. If that time doesn't work on our end, we'll call you to reschedule.`);
+  }
+
+  lines.push(`Someone from our team will get back to you <strong>within one business day</strong>. ` +
+    `If you'd rather just talk it through, call us at <a href="tel:6317325886">631-732-5886</a>.`);
+
+  const panel = document.createElement('div');
+  panel.className = 'form-success';
+  panel.setAttribute('role', 'status');
+  panel.innerHTML =
+    `<svg class="form-success-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">` +
+    `<circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2" opacity="0.25"/>` +
+    `<path d="M15 24.5l6.5 6.5L33 18" stroke="currentColor" stroke-width="2.5" ` +
+    `stroke-linecap="round" stroke-linejoin="round"/></svg>` +
+    lines.map((l) => `<p>${l}</p>`).join('');
+
+  if (form.closest('.modal')) {
+    panel.insertAdjacentHTML('beforeend',
+      '<button type="button" class="btn btn-primary" data-close-modal="true">Back to the site</button>');
+  }
+
+  // Swap the intro copy over too, so the panel doesn't sit under "Check your date."
+  const scope = form.parentElement || document;
+  const heading = scope.querySelector('[data-form-heading]');
+  if (heading) heading.textContent = firstName ? `Thanks, ${firstName}.` : 'Thanks for reaching out.';
+  scope.querySelectorAll('[data-form-intro]').forEach((el) => { el.hidden = true; });
+
+  // Both copies of this form carry an author-CSS display:flex, which outranks
+  // the browser's [hidden] rule, so hide it inline as well.
+  form.hidden = true;
+  form.style.display = 'none';
+  form.insertAdjacentElement('afterend', panel);
+  panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+
 /* --- Boot --- */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -776,6 +871,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupReferralOther();
   setupAppointmentToggle();
   setupAppointmentValidation();
+  setupFormSuccess();
   renderFeaturedTalent();
   renderTestimonial();
   renderShowcaseCalendar();

@@ -106,12 +106,12 @@
         <!-- RIGHT: inline form (same fields as modal) -->
         <div>
           <div class="contact-card" style="padding: var(--sp-7);">
-            <h3 style="font-size: var(--fs-h3); margin-bottom: var(--sp-2);">Check your date.</h3>
-            <p style="font-size: var(--fs-sm); color: var(--text-on-light-soft); margin-bottom: var(--sp-5);">
+            <h3 data-form-heading style="font-size: var(--fs-h3); margin-bottom: var(--sp-2);">Check your date.</h3>
+            <p data-form-intro style="font-size: var(--fs-sm); color: var(--text-on-light-soft); margin-bottom: var(--sp-5);">
               We respond within one business day with a quote that fits your night. Or call us at 631-732-5886.
             </p>
 
-            <form name="check-your-date" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap: var(--sp-4);">
+            <form name="check-your-date" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap: var(--sp-4);">
               <input type="hidden" name="form-name" value="check-your-date">
               <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 

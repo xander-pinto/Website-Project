@@ -13,10 +13,10 @@
       </svg>
     </button>
 
-    <h2 id="cyd-title">Check your date.</h2>
-    <p class="lead">Tell us a little about your event. We'll confirm availability and come back with options that fit your night, within one business day.</p>
+    <h2 id="cyd-title" data-form-heading>Check your date.</h2>
+    <p class="lead" data-form-intro>Tell us a little about your event. We'll confirm availability and come back with options that fit your night, within one business day.</p>
 
-    <form name="check-your-date" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="check-your-date" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="check-your-date">
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
