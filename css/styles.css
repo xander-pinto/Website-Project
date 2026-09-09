@@ -1181,6 +1181,47 @@ p {
   gap: var(--sp-1) var(--sp-5);
 }
 
+/* The appointment ask is the highest-value thing on this form, so it gets its
+   own block rather than sitting in the run of ordinary fields. */
+.appt-invite {
+  margin: var(--sp-2) 0;
+  padding: var(--sp-4) var(--sp-4) var(--sp-3);
+  border: 1px solid rgba(11, 94, 222, 0.28);
+  border-radius: 12px;
+  background: rgba(11, 94, 222, 0.05);
+}
+
+/* .field-checkbox is defined further down the file, so these need the extra
+   class to win rather than relying on source order. */
+.appt-invite .appt-invite-check {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text-on-light);
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.appt-invite .appt-invite-check input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  flex: none;
+}
+
+.appt-invite-note {
+  margin: var(--sp-2) 0 0 30px;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--text-on-light-soft);
+}
+
+@media (max-width: 640px) {
+  .appt-invite-note {
+    margin-left: 0;
+  }
+}
+
 .appt-error {
   margin-top: var(--sp-2);
   font-size: var(--fs-xs);
