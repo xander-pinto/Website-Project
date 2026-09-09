@@ -161,7 +161,8 @@
     const all = Array.isArray(window.TIKTOK_DATA) ? window.TIKTOK_DATA : [];
     const picks = all
       .filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug))
-      .sort((a, b) => viewCount(b.views) - viewCount(a.views))
+      .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0)
+                   || viewCount(b.views) - viewCount(a.views))
       .slice(0, MAX_TIKTOKS);
     if (!picks.length) {
       hideSection('[data-slot="tiktok-section"]');
