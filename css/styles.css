@@ -2948,8 +2948,13 @@ p {
   text-align: center;
 }
 
-.tiktok-follow {
+.tiktok-more {
   margin-top: var(--sp-6);
+  text-align: center;
+}
+
+.tiktok-follow {
+  margin-top: var(--sp-5);
   text-align: center;
   font-size: var(--fs-sm);
 }

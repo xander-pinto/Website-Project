@@ -359,7 +359,7 @@ window.TEAM_DATA = [
     slug: 'pat',
     name: 'Pat',
     role: 'Percussionist',
-    photo: '/assets/images/team/empty_image.jpg',
+    photo: '/assets/images/team/live-musicians/pat/pat_pf.jpg',
     bio: 'Pat is an old-school percussionist who plays the entire night, not just a song or two. Down to earth, genuinely kind, and a true professional. You feel every beat he adds to the room, and you walk away knowing you got your money\'s worth. Just a great guy to have at your event.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [

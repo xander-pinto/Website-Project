@@ -135,9 +135,10 @@
     showSection('[data-slot="demo-section"]');
   }
 
-  /* A page shows its best-performing clips, not everything tagged to it, so
-     the library can be tagged liberally without a page becoming a wall. */
-  const MAX_TIKTOKS = 6;
+  /* A page leads with its best-performing clips rather than everything tagged
+     to it, so the library can be tagged liberally without a page opening as a
+     wall. The rest are one button away, not thrown out. */
+  const MAX_TIKTOKS = 9;
 
   function viewCount(v) {
     const m = String(v || '').trim().match(/^([\d.]+)\s*([KM]?)$/i);
@@ -162,14 +163,13 @@
     const picks = all
       .filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug))
       .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0)
-                   || viewCount(b.views) - viewCount(a.views))
-      .slice(0, MAX_TIKTOKS);
+                   || viewCount(b.views) - viewCount(a.views));
     if (!picks.length) {
       hideSection('[data-slot="tiktok-section"]');
       return;
     }
-    const html = picks.map((c) => `
-      <figure class="tiktok-card">
+    const html = picks.map((c, i) => `
+      <figure class="tiktok-card"${i >= MAX_TIKTOKS ? ' data-tiktok-extra hidden' : ''}>
         <div class="demo-embed is-portrait">
           <button type="button" class="tiktok-facade" data-tiktok-id="${escapeHTML(c.id)}"
                   style="background-image:url('/assets/images/tiktok/${escapeHTML(c.id)}.jpg')"
@@ -183,8 +183,29 @@
       </figure>
     `).join('');
     setHTML('[data-slot="tiktoks"]', html);
+
+    const moreWrap = document.querySelector('[data-slot="tiktok-more"]');
+    if (moreWrap) {
+      const hidden = picks.length - MAX_TIKTOKS;
+      if (hidden > 0) {
+        moreWrap.innerHTML =
+          `<button type="button" class="btn btn-secondary" data-tiktok-more>` +
+          `Show ${hidden} more</button>`;
+        moreWrap.hidden = false;
+      } else {
+        moreWrap.hidden = true;
+      }
+    }
     showSection('[data-slot="tiktok-section"]');
   }
+
+  // Reveal the rest of a page's clips. One press, no pagination.
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('[data-tiktok-more]');
+    if (!btn) return;
+    document.querySelectorAll('[data-tiktok-extra]').forEach((el) => { el.hidden = false; });
+    btn.remove();
+  });
 
   // Swap the poster for the real player on click. One at a time, by design.
   document.addEventListener('click', (e) => {
