@@ -2941,6 +2941,12 @@ p {
   gap: var(--sp-3);
 }
 
+/* The display:flex above outranks the browser's [hidden] rule, so the clips
+   held back behind "Show more" need this to actually stay hidden. */
+.tiktok-card[hidden] {
+  display: none;
+}
+
 .tiktok-card figcaption {
   font-size: var(--fs-sm);
   line-height: 1.55;
