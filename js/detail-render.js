@@ -137,8 +137,14 @@
 
   /* A page leads with its best-performing clips rather than everything tagged
      to it, so the library can be tagged liberally without a page opening as a
-     wall. The rest are one button away, not thrown out. */
-  const MAX_TIKTOKS = 9;
+     wall. The rest are one press away, not thrown out.
+
+     Phones get three instead of nine: the grid collapses to a single column
+     there, so nine stacked 9:16 clips is about five thousand pixels of scroll
+     before you reach the button. Read once at load, not per render, so the
+     count stays consistent between the first paint and later presses. */
+  const MAX_TIKTOKS =
+    window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 3 : 9;
 
   function viewCount(v) {
     const m = String(v || '').trim().match(/^([\d.]+)\s*([KM]?)$/i);

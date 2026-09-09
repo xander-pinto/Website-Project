@@ -1197,7 +1197,7 @@ p {
   font-size: var(--fs-md);
   font-weight: 600;
   color: var(--text-on-light);
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin-top: 0;
 }
@@ -1217,6 +1217,12 @@ p {
 }
 
 @media (max-width: 640px) {
+  /* 18px wraps the label onto three lines in a narrow card; 16px still reads
+     as the biggest thing on the form. */
+  .appt-invite .appt-invite-check {
+    font-size: var(--fs-base);
+  }
+
   .appt-invite-note {
     margin-left: 0;
   }
