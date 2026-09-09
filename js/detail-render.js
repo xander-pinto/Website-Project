@@ -135,6 +135,18 @@
     showSection('[data-slot="demo-section"]');
   }
 
+  /* A page shows its best-performing clips, not everything tagged to it, so
+     the library can be tagged liberally without a page becoming a wall. */
+  const MAX_TIKTOKS = 6;
+
+  function viewCount(v) {
+    const m = String(v || '').trim().match(/^([\d.]+)\s*([KM]?)$/i);
+    if (!m) return 0;
+    const n = parseFloat(m[1]) || 0;
+    const mult = m[2].toUpperCase() === 'M' ? 1e6 : m[2].toUpperCase() === 'K' ? 1e3 : 1;
+    return n * mult;
+  }
+
   /* Clips live in one tagged library (tiktok-data.js) rather than being pasted
      into each record, so a single post can appear on a person's page and a
      service page at once. `field` is 'people' on person pages, 'services'
@@ -147,7 +159,10 @@
      because TikTok's thumbnail URLs are signed and expire within days. */
   function renderTikToks(record, field) {
     const all = Array.isArray(window.TIKTOK_DATA) ? window.TIKTOK_DATA : [];
-    const picks = all.filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug));
+    const picks = all
+      .filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug))
+      .sort((a, b) => viewCount(b.views) - viewCount(a.views))
+      .slice(0, MAX_TIKTOKS);
     if (!picks.length) {
       hideSection('[data-slot="tiktok-section"]');
       return;
