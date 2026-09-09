@@ -2957,6 +2957,20 @@ p {
 .tiktok-more {
   margin-top: var(--sp-6);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.tiktok-more[hidden] {
+  display: none;
+}
+
+.tiktok-count {
+  font-size: var(--fs-xs);
+  color: var(--text-on-dark-soft);
+  letter-spacing: 0.04em;
 }
 
 .tiktok-follow {

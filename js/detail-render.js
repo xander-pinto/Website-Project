@@ -190,7 +190,8 @@
       if (hidden > 0) {
         moreWrap.innerHTML =
           `<button type="button" class="btn btn-secondary" data-tiktok-more>` +
-          `Show ${hidden} more</button>`;
+          `Show ${Math.min(hidden, MAX_TIKTOKS)} more</button>` +
+          `<span class="tiktok-count">${MAX_TIKTOKS} of ${picks.length}</span>`;
         moreWrap.hidden = false;
       } else {
         moreWrap.hidden = true;
@@ -199,12 +200,23 @@
     showSection('[data-slot="tiktok-section"]');
   }
 
-  // Reveal the rest of a page's clips. One press, no pagination.
+  /* Reveal another page's worth of clips per press rather than dumping all of
+     them at once, so a section with forty of them stays walkable. */
   document.addEventListener('click', (e) => {
     const btn = e.target.closest && e.target.closest('[data-tiktok-more]');
     if (!btn) return;
-    document.querySelectorAll('[data-tiktok-extra]').forEach((el) => { el.hidden = false; });
-    btn.remove();
+    const still = [...document.querySelectorAll('[data-tiktok-extra][hidden]')];
+    still.slice(0, MAX_TIKTOKS).forEach((el) => { el.hidden = false; });
+    const left = still.length - MAX_TIKTOKS;
+    const count = document.querySelector('.tiktok-count');
+    const total = document.querySelectorAll('.tiktok-card').length;
+    if (left > 0) {
+      btn.textContent = `Show ${Math.min(left, MAX_TIKTOKS)} more`;
+      if (count) count.textContent = `${total - left} of ${total}`;
+    } else {
+      if (count) count.remove();
+      btn.remove();
+    }
   });
 
   // Swap the poster for the real player on click. One at a time, by design.
