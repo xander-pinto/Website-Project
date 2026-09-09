@@ -19,11 +19,25 @@
    ============================================================ */
 
 window.TEAM_DATA = [
-  /* ---------------------------- MCs ---------------------------- */
+  {
+    slug: 'pj',
+    name: 'PJ',
+    role: 'MC',
+    photo: '/assets/images/team/mcs/pj/pj_pf.jpg',
+    bio: 'A music teacher by day, which tells you everything about the voice. PJ is clear, warm, and impossible not to like, and the room feels it the second he picks up the mic. He gets a floor rowdy and then goes out and joins it himself, because he can actually move. You don\'t just hear PJ at a party, you feel him. World-class MC.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'On the mic at a wedding, with the band.' },
+    ],
+    gallery: [
+      '/assets/images/team/mcs/pj/PJ_portrait.jpg',
+      '/assets/images/team/mcs/pj/pj_happy.jpg',
+    ],
+  },
   {
     slug: 'joe-cip',
     name: 'Joe Cip.',
-    role: 'MC',
+    role: 'MC · DJ',
     photo: '/assets/images/team/mcs/joe-cip/joe_cip_pf.jpg',
     bio: 'The best-dressed guy in the room, usually in sunglasses, always with the most energy. Joe Cip has been on the mic since he was fifteen, and after twenty-six years he still treats every party like it\'s the only one that matters. Couples love him because he genuinely cares: he stays on top of the timeline, keeps the night running clean, and brings the kind of enthusiasm a whole room feeds off.',
     socials: { instagram: '', tiktok: '', youtube: '' },
@@ -38,21 +52,6 @@ window.TEAM_DATA = [
       '/assets/images/team/mcs/joe-cip/joe_announcing.jpg',
       '/assets/images/team/mcs/joe-cip/joe_flyyyy.jpg',
       '/assets/images/team/mcs/joe-cip/joe_talk.jpg',
-    ],
-  },
-  {
-    slug: 'pj',
-    name: 'PJ',
-    role: 'MC',
-    photo: '/assets/images/team/mcs/pj/pj_pf.jpg',
-    bio: 'A music teacher by day, which tells you everything about the voice. PJ is clear, warm, and impossible not to like, and the room feels it the second he picks up the mic. He gets a floor rowdy and then goes out and joins it himself, because he can actually move. You don\'t just hear PJ at a party, you feel him. World-class MC.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'On the mic at a wedding, with the band.' },
-    ],
-    gallery: [
-      '/assets/images/team/mcs/pj/PJ_portrait.jpg',
-      '/assets/images/team/mcs/pj/pj_happy.jpg',
     ],
   },
   {
@@ -72,6 +71,29 @@ window.TEAM_DATA = [
       '/assets/images/team/mcs/mike/mike_speaking.jpg',
       '/assets/images/team/mcs/mike/mike_having_fun.jpg',
     ],
+  },
+  {
+    slug: 'leo',
+    name: 'Leo',
+    role: 'MC · DJ · EN/ES',
+    photo: '/assets/images/team/mcs/leo/leo_pf.avif',
+    bio: 'Bilingual English and Spanish, and maybe the most precise MC on the roster. Leo never says too much and never says too little. He lets people have their moments, then steers the room exactly where it needs to go. Serious, warm, thoughtful, and a constant presence on the floor even when he isn\'t the loudest one there. New to Tommy\'s Tunes, but he\'s been doing this a long time, and it shows. The man is a machine.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/52CquNBGDPE', caption: 'On the mic and running intros.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/Trd-c2k0ruw', caption: 'Doing the introductions.' },
+    ],
+    gallery: [],
+  },
+  {
+    slug: 'mike-n',
+    name: 'Mike N.',
+    role: 'MC',
+    photo: '/assets/images/team/mcs/mike-n/mike_n_pf.jpg',
+    bio: 'Old school in the best way. Mike is an older Italian gentleman who has been doing this his whole life, and it shows in every word. He\'ll give it to you straight, no fluff, and treat your night like he\'s done a thousand of them, because he has. When you picture a classic Long Island MC, you picture Mike.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demo: null,
+    gallery: [],
   },
   {
     slug: 'joe-costa',
@@ -107,18 +129,6 @@ window.TEAM_DATA = [
     ],
   },
   {
-    slug: 'yianni',
-    name: 'Yianni',
-    role: 'MC · EN/GR',
-    photo: '/assets/images/team/mcs/yianni/yianni_pf.jpg',
-    bio: 'Bilingual English and Greek, and the natural pick when a wedding leans Greek. Younger, professional, easy to work with. Yianni keeps both sides of the room in the celebration.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/bvn6C8LQZMU', caption: 'Doing the introductions.' },
-    ],
-    gallery: [],
-  },
-  {
     slug: 'zach',
     name: 'Zach',
     role: 'MC',
@@ -127,6 +137,18 @@ window.TEAM_DATA = [
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/JJzcTUVoZWY', caption: 'Hosting a Sweet 16.' },
+    ],
+    gallery: [],
+  },
+  {
+    slug: 'yianni',
+    name: 'Yianni',
+    role: 'MC · EN/GR',
+    photo: '/assets/images/team/mcs/yianni/yianni_pf.jpg',
+    bio: 'Bilingual English and Greek, and the natural pick when a wedding leans Greek. Younger, professional, easy to work with. Yianni keeps both sides of the room in the celebration.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/bvn6C8LQZMU', caption: 'Doing the introductions.' },
     ],
     gallery: [],
   },
@@ -141,30 +163,57 @@ window.TEAM_DATA = [
     gallery: [],
   },
   {
-    slug: 'leo',
-    name: 'Leo',
-    role: 'MC · EN/ES',
-    photo: '/assets/images/team/mcs/leo/leo_pf.avif',
-    bio: 'Bilingual English and Spanish, and maybe the most precise MC on the roster. Leo never says too much and never says too little. He lets people have their moments, then steers the room exactly where it needs to go. Serious, warm, thoughtful, and a constant presence on the floor even when he isn\'t the loudest one there. New to Tommy\'s Tunes, but he\'s been doing this a long time, and it shows. The man is a machine.',
+    slug: 'richie',
+    name: 'Rich',
+    role: 'DJ',
+    photo: '/assets/images/team/djs/richie/rich_pf.JPG',
+    bio: '"Everyone\'s favorite DJ," and he\'s earned the title. Rich might be the most requested name on the roster, with high-energy mixes and a music knowledge deep enough to handle any request the floor throws at him. Nobody brings more energy behind the booth. He\'s building a real following, and once you\'ve had a night with Rich, you get why. One of the best DJs on Long Island.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demo: null,
+    gallery: [
+      '/assets/images/team/djs/richie/richie_arms_out.jpg',
+      '/assets/images/team/djs/richie/richie_glasses.jpg',
+      '/assets/images/team/djs/richie/rich_pointing.JPG',
+    ],
+  },
+  {
+    slug: 'dominick',
+    name: 'Dominick',
+    role: 'DJ',
+    photo: '/assets/images/team/djs/dominick/dom_pf.JPG',
+    bio: 'Dominick reads a room like nobody else, and it\'s no accident he\'s one of the most requested DJs we have, maybe the most. He\'s been doing this since he was a teenager and treats every job like it\'s the only one that matters. Early, organized, obsessive about detail, right down to whether the wires are tangled. He gets it right because he refuses not to. World class, plain and simple.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/52CquNBGDPE', caption: 'On the mic and running intros.' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/Trd-c2k0ruw', caption: 'Doing the introductions.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Running a full party with MC Mike.' },
     ],
     gallery: [],
   },
   {
-    slug: 'mike-n',
-    name: 'Mike N.',
-    role: 'MC',
-    photo: '/assets/images/team/mcs/mike-n/mike_n_pf.jpg',
-    bio: 'Old school in the best way. Mike is an older Italian gentleman who has been doing this his whole life, and it shows in every word. He\'ll give it to you straight, no fluff, and treat your night like he\'s done a thousand of them, because he has. When you picture a classic Long Island MC, you picture Mike.',
+    slug: 'anderson',
+    name: 'Anderson',
+    role: 'DJ · MC · EN/ES',
+    photo: '/assets/images/team/djs/anderson/anderson_pf.jpg',
+    bio: 'Bilingual English and Spanish, and surgical behind the decks. Anderson mixes clean, keeps the energy high, and reads a crowd with the kind of presence you can\'t teach. He\'s been doing this a long time and he\'s as reliable as they come, which is exactly why he\'s a go-to for weddings and Quinceañeras that move between two languages all night.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/oqZ0QnOVRf8?start=29', caption: 'DJing a prom.' },
+    ],
+    gallery: [
+      '/assets/images/team/djs/anderson/anderson_behind_booth.jpg',
+    ],
+  },
+  {
+    slug: 'jon',
+    name: 'Jon',
+    role: 'DJ · MC',
+    photo: '/assets/images/team/djs/jon/jon_pf.jpg',
+    bio: 'Jon mixes like few people can. Smooth, precise, and locked in on the details most people never notice, the kind of DJ where you don\'t catch the transitions because they\'re seamless. He keeps everything organized and every blend clean, reads exactly where the floor wants to go, and takes it there. Couples and crowds feel it even if they can\'t name it. One of the most gifted DJs on the entire roster, and he proves it every single night.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/1WAMXBaWtM4?start=21', caption: 'DJing a wedding.' },
+    ],
     gallery: [],
   },
-
-  /* ---------------------------- DJs ---------------------------- */
   {
     slug: 'steven',
     name: 'Steven',
@@ -183,56 +232,6 @@ window.TEAM_DATA = [
     ],
   },
   {
-    slug: 'dominick',
-    name: 'Dominick',
-    role: 'DJ',
-    photo: '/assets/images/team/djs/dominick/dom_pf.JPG',
-    bio: 'Dominick reads a room like nobody else, and it\'s no accident he\'s one of the most requested DJs we have, maybe the most. He\'s been doing this since he was a teenager and treats every job like it\'s the only one that matters. Early, organized, obsessive about detail, right down to whether the wires are tangled. He gets it right because he refuses not to. World class, plain and simple.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Running a full party with MC Mike.' },
-    ],
-    gallery: [],
-  },
-  {
-    slug: 'anderson',
-    name: 'Anderson',
-    role: 'DJ · EN/ES',
-    photo: '/assets/images/team/djs/anderson/anderson_pf.jpg',
-    bio: 'Bilingual English and Spanish, and surgical behind the decks. Anderson mixes clean, keeps the energy high, and reads a crowd with the kind of presence you can\'t teach. He\'s been doing this a long time and he\'s as reliable as they come, which is exactly why he\'s a go-to for weddings and Quinceañeras that move between two languages all night.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/oqZ0QnOVRf8?start=29', caption: 'DJing a prom.' },
-    ],
-    gallery: [
-      '/assets/images/team/djs/anderson/anderson_behind_booth.jpg',
-    ],
-  },
-  {
-    slug: 'ruben',
-    name: 'Ruben',
-    role: 'DJ · EN/ES',
-    photo: '/assets/images/team/djs/ruben/ruben_pf.jpg',
-    bio: 'One of the kindest guys on the roster and one of the most experienced. Ruben is bilingual English and Spanish, mixes with a real touch, and genuinely cares about getting your night right. Ask him about watches if you get the chance. He\'s a pleasure to work with, and the years behind him show.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/xqNlj59OCRU', caption: 'On the mic.' },
-    ],
-    gallery: [],
-  },
-  {
-    slug: 'jon',
-    name: 'Jon',
-    role: 'DJ',
-    photo: '/assets/images/team/djs/jon/jon_pf.jpg',
-    bio: 'Jon mixes like few people can. Smooth, precise, and locked in on the details most people never notice, the kind of DJ where you don\'t catch the transitions because they\'re seamless. He keeps everything organized and every blend clean, reads exactly where the floor wants to go, and takes it there. Couples and crowds feel it even if they can\'t name it. One of the most gifted DJs on the entire roster, and he proves it every single night.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/1WAMXBaWtM4?start=21', caption: 'DJing a wedding.' },
-    ],
-    gallery: [],
-  },
-  {
     slug: 'konstantine',
     name: 'Konstantine',
     role: 'DJ',
@@ -242,30 +241,6 @@ window.TEAM_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/YPPfJBD8G3k?start=57', caption: 'On a set.' },
     ],
-    gallery: [],
-  },
-  {
-    slug: 'richie',
-    name: 'Rich',
-    role: 'DJ',
-    photo: '/assets/images/team/djs/richie/rich_pf.JPG',
-    bio: '"Everyone\'s favorite DJ," and he\'s earned the title. Rich might be the most requested name on the roster, with high-energy mixes and a music knowledge deep enough to handle any request the floor throws at him. Nobody brings more energy behind the booth. He\'s building a real following, and once you\'ve had a night with Rich, you get why. One of the best DJs on Long Island.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
-    gallery: [
-      '/assets/images/team/djs/richie/richie_arms_out.jpg',
-      '/assets/images/team/djs/richie/richie_glasses.jpg',
-      '/assets/images/team/djs/richie/rich_pointing.JPG',
-    ],
-  },
-  {
-    slug: 'gio',
-    name: 'Gio',
-    role: 'DJ · EN/ES',
-    photo: '/assets/images/team/djs/gio/gio_pf.jpg',
-    bio: 'Gio is a DJ first, an MC when the night calls for it, and bilingual English and Spanish either way. He\'s serious about the craft and pours real care into the details, the kind of focus that comes from years behind the decks. He produces his own music too, so his ear runs deeper than most. Quietly excellent at what he does.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
     gallery: [],
   },
   {
@@ -281,7 +256,28 @@ window.TEAM_DATA = [
       '/assets/images/team/djs/johnny-munroe/packed_floor_with_johnny.jpg',
     ],
   },
-  /* ----------------------- Live musicians ----------------------- */
+  {
+    slug: 'ruben',
+    name: 'Ruben',
+    role: 'DJ · EN/ES',
+    photo: '/assets/images/team/djs/ruben/ruben_pf.jpg',
+    bio: 'One of the kindest guys on the roster and one of the most experienced. Ruben is bilingual English and Spanish, mixes with a real touch, and genuinely cares about getting your night right. Ask him about watches if you get the chance. He\'s a pleasure to work with, and the years behind him show.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/xqNlj59OCRU', caption: 'On the mic.' },
+    ],
+    gallery: [],
+  },
+  {
+    slug: 'gio',
+    name: 'Gio',
+    role: 'DJ · EN/ES',
+    photo: '/assets/images/team/djs/gio/gio_pf.jpg',
+    bio: 'Gio is a DJ first, an MC when the night calls for it, and bilingual English and Spanish either way. He\'s serious about the craft and pours real care into the details, the kind of focus that comes from years behind the decks. He produces his own music too, so his ear runs deeper than most. Quietly excellent at what he does.',
+    socials: { instagram: '', tiktok: '', youtube: '' },
+    demo: null,
+    gallery: [],
+  },
   {
     slug: 'mark',
     name: 'Mark',
@@ -462,8 +458,6 @@ window.TEAM_DATA = [
     ],
     gallery: [],
   },
-
-  /* ------------------- Zap Shot photographers ------------------- */
   {
     slug: 'robert',
     name: 'Robert',
@@ -494,8 +488,6 @@ window.TEAM_DATA = [
     demo: null,
     gallery: [],
   },
-
-  /* --------------------------- Dancers -------------------------- */
   {
     slug: 'shad',
     name: 'Shad',
@@ -524,8 +516,6 @@ window.TEAM_DATA = [
     ],
     gallery: [],
   },
-
-  /* ----------------- Management & the Masinos ------------------ */
   {
     slug: 'tommy-masino',
     name: 'Tommy Masino',
@@ -639,8 +629,6 @@ window.TEAM_DATA = [
     demo: null,
     gallery: [],
   },
-
-  /* -------------------------- Specialty ------------------------- */
   {
     slug: 'lilly',
     name: 'Lilly',
